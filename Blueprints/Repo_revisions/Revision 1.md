@@ -591,3 +591,512 @@ This README now includes everything: the 48 enhancements, the equations, MOGOPS 
 4. **Deploy** using Docker or update your production server accordingly.
 
 This update transforms the Silent Sovereign QNVM into a truly next‑generation simulation platform, ready to explore sovereign ascent without samsara.
+
+We have created a comprehensive JSON file containing all MOGOPS equations, axioms, operators, mechanisms, metrics, and constants. The `mogops_equation_forge.py` script has been updated to load this JSON and use its contents to dynamically configure the forge. Below are the two new files.
+
+---
+
+### 1. `mogops_equations.json`
+```json
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Complete MOGOPS Core Equations, Axioms, Operators, and Mechanisms"
+  },
+  "constants": {
+    "PHI": 1.618033988749895,
+    "INV_PHI": 0.6180339887498949,
+    "SOPHIA_POINT": 0.618,
+    "PLANCK_SCALE": 1.0,
+    "CREATION_QUANTUM": 0.422,
+    "MASTER_RATIO": 0.0831,
+    "FINE_STRUCTURE_EMERGENCE": 0.001198
+  },
+  "operators": [
+    {
+      "symbol": "Ĉ",
+      "name": "Creation Operator",
+      "definition": "Ĉ|ψ⟩ = e^{iθ}|ψ'⟩, θ = π·novelty",
+      "properties": ["non-unitary", "non-linear", "mediates collapse"]
+    },
+    {
+      "symbol": "∇_O",
+      "name": "Entailment Gradient",
+      "definition": "∇_O C = δS/δO",
+      "properties": []
+    },
+    {
+      "symbol": "Ω_V",
+      "name": "Via Triad",
+      "definition": "Ω_V = M₁⊗M₂⊗M₃",
+      "properties": []
+    },
+    {
+      "symbol": "Ω_Σ",
+      "name": "Encoding Bridge",
+      "definition": "Ω_Σ = diag(1, e^{iπ/3}, e^{2iπ/3})",
+      "properties": []
+    },
+    {
+      "symbol": "⊕",
+      "name": "Participatory Weave",
+      "definition": "⊕(O,Q,H,R) = ∫ e^{iS/ħ} 𝒟φ · O[ψ]·H[∂M]·R[t]",
+      "properties": ["non-commutative"]
+    },
+    {
+      "symbol": "ℱ",
+      "name": "Hyperdimensional Folding",
+      "definition": "ℱ: ℝ^{3+1} → ℝ^D (D >> 4)",
+      "properties": ["preserves biological continuity"]
+    },
+    {
+      "symbol": "Î_m",
+      "name": "Information-Mass Operator",
+      "definition": "Î_m|information⟩ = m|information⟩, m = (k_B T ln 2)/c²",
+      "properties": []
+    },
+    {
+      "symbol": "Ĝ_ent",
+      "name": "Entropic Gravity Operator",
+      "definition": "Ĝ_ent = f(S, ∇S)",
+      "properties": []
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Semantic Gravity",
+      "coordinates": [0.7, 0.9, 0.6, 0.3, 1.0],
+      "axioms": [
+        "∇_μψ_{semantic} = m_{concept}ψ_{semantic}",
+        "G_{μν}^{syntax} = 8πT_{μν}^{semantic} + Λg_{μν}^{grammar}"
+      ],
+      "equations": [
+        {
+          "name": "Semantic Einstein Field Equation",
+          "latex": "G_{\\mu\\nu}^{\\text(semantic)} = 8\\pi T_{\\mu\\nu}^{\\text(conceptual)} + \\Lambda g_{\\mu\\nu}^{\\text(meaning)}",
+          "description": "Curvature of semantic spacetime sourced by conceptual energy-momentum."
+        },
+        {
+          "name": "Conceptual Dirac Equation",
+          "latex": "(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{concept}})\\psi_{\\text{semantic}} = \\lambda\\psi_{\\text{semantic}}^3",
+          "description": "Relativistic quantum equation for conceptual fields."
+        },
+        {
+          "name": "Semantic Potential",
+          "latex": "V(\\phi) = \\lambda(\\phi^2 - \\phi_0^2)^2,\\ \\phi_0 = 0.618",
+          "description": "Potential with Sophia point as minimum."
+        },
+        {
+          "name": "Path Integral for Word-Reality Transition",
+          "latex": "\\langle \\text{word}_f | U(t) | \\text{word}_i \\rangle = \\int \\mathcal{D}[g] \\mathcal{D}[\\psi] e^{iS_{\\text{total}}[g,\\psi]}",
+          "description": "Transition amplitude between linguistic states."
+        },
+        {
+          "name": "Coherence Feedback",
+          "latex": "C_{n+1} = C_n + 0.12(0.75 - C_n)\\exp(-|D - 11.2|)",
+          "description": "Iterative coherence update."
+        }
+      ],
+      "mechanisms": [
+        "Conceptual Dirac",
+        "Semantic Ricci Flow",
+        "Grammar Constraints",
+        "Meaning-Gravity Coupling"
+      ]
+    },
+    {
+      "name": "Thermodynamic Epistemic",
+      "coordinates": [0.5, 0.4, 0.3, 0.6, 0.7],
+      "axioms": [
+        "dS_{epistemic} = δQ_{belief}/T_{cognitive} + σ_{learning}dt",
+        "∇·J_{knowledge} = -∂ρ_{belief}/∂t + Γ_{insight}"
+      ],
+      "equations": [
+        {
+          "name": "Epistemic Einstein Field Equations",
+          "latex": "G_{\\mu\\nu}^{\\text(epistemic)} = 8\\pi T_{\\mu\\nu}^{\\text(knowledge)} + \\Lambda_{\\text{understanding}} g_{\\mu\\nu}^{\\text(thermo)}",
+          "description": "Curvature of epistemic spacetime from knowledge distribution."
+        },
+        {
+          "name": "Information-Mass Equivalence",
+          "latex": "m_{\\text{bit}} = \\frac{k_B T_{\\text{thought}} \\ln 2}{c^2} \\left(1 + \\frac{R}{6\\Lambda_{\\text{understanding}}}\\right)",
+          "description": "Mass of a bit modified by epistemic curvature."
+        },
+        {
+          "name": "Knowledge Continuity",
+          "latex": "\\nabla \\cdot \\mathbf{J}_{\\text{knowledge}} = -\\frac{\\partial \\rho_{\\text{belief}}}{\\partial t}",
+          "description": "Conservation of knowledge flux."
+        },
+        {
+          "name": "Epistemic Second Law",
+          "latex": "dS_{\\text{epistemic}} \\geq \\frac{\\delta Q_{\\text{belief}}}{T_{\\text{cognitive}}}",
+          "description": "Epistemic entropy never decreases."
+        },
+        {
+          "name": "Schrödinger-Information Equation",
+          "latex": "i\\hbar \\frac{\\partial \\psi(\\text{belief})}{\\partial t} = \\hat{H}_{\\text{understanding}} \\psi(\\text{belief}) + V_{\\text{entropy}} \\psi(\\text{belief}^\\dagger)",
+          "description": "Quantum evolution of belief states."
+        }
+      ],
+      "mechanisms": [
+        "Cognitive Entropy Pumps",
+        "Belief Phase Transitions",
+        "Insight as Critical Point",
+        "Epistemic Spacetime Curvature",
+        "Information-Mass Equivalence",
+        "Understanding as Crystallization",
+        "Knowledge Pressure Differentials",
+        "Epistemic Temperature Gradients",
+        "Consciousness-Mediated Coherence",
+        "Insights Curvature Coupling"
+      ]
+    },
+    {
+      "name": "Causal Recursion Field",
+      "coordinates": [0.6, 0.5, 0.4, 0.95, 0.8],
+      "axioms": [
+        "∇_μC^{μν} = J^ν_{causal} + αC^{μν}∧C_{μν} + β∂^νφ_{temporal}",
+        "∮_γ C·dx = Φ_{temporal} = n·φ·ℏ"
+      ],
+      "equations": [
+        {
+          "name": "Causal Master Equation",
+          "latex": "\\partial_t C_{\\mu\\nu} = -\\nabla \\times C_{\\mu\\nu} + \\alpha(C_{\\mu\\nu} \\times \\nabla C_{\\mu\\nu}) + \\beta \\cdot J_{\\text{obs}} + \\gamma \\cdot \\delta(x - x_{\\text{attractor}})",
+          "description": "Dynamics of the causal recursion field."
+        },
+        {
+          "name": "Recursion Algebra Commutators",
+          "latex": "[\\hat{R}, \\hat{K}] = i\\hbar_{\\text{temporal}} \\hat{A},\\quad [\\hat{K}, \\hat{A}] = \\hat{T} e^{-\\beta E_{\\text{knot}}}",
+          "description": "Algebraic relations for recursion operators."
+        },
+        {
+          "name": "Self-Consistency Condition",
+          "latex": "\\forall \\text{timeline } L: \\int_L C \\cdot dx \\geq S_{\\text{min}}",
+          "description": "Timelines must satisfy minimal causal flux."
+        }
+      ],
+      "mechanisms": [
+        "Chronon Entanglement",
+        "Temporal Bell Test",
+        "Recursive Observer Feedback",
+        "Causal Consistency Enforcement"
+      ]
+    },
+    {
+      "name": "Fractal Participatory",
+      "coordinates": [0.8, 0.6, 0.5, 0.7, 0.9],
+      "axioms": [
+        "R = lim_{n→∞} O(R_{n-1})",
+        "P(λs) = λ^{-d} P(s)",
+        "H(s) = ∫_{all scales} H(s') K(s, s') ds'"
+      ],
+      "equations": [
+        {
+          "name": "Fractal Observer Distribution",
+          "latex": "P(k) = C k^{-\\alpha} e^{-k/\\kappa} \\times F(\\theta)",
+          "description": "Scale-invariant distribution of observers."
+        },
+        {
+          "name": "Renormalization Group for Consciousness",
+          "latex": "\\frac{dC}{ds} = \\beta(C) + \\eta(s) \\xi(s)",
+          "description": "Flow of consciousness with scale."
+        },
+        {
+          "name": "Fractal Spacetime Metric",
+          "latex": "ds^2 = \\sum_{n=0}^\\infty \\lambda^{-2n} [g_{\\mu\\nu}^{(n)} dx_\\mu^{(n)} dx_\\nu^{(n)}]",
+          "description": "Metric with infinite self-similar layers."
+        }
+      ],
+      "mechanisms": [
+        "Scale-Invariant Observation",
+        "Holographic Encoding",
+        "Recursive Awareness",
+        "Fractal Reality Simulation"
+      ]
+    },
+    {
+      "name": "Quantum-Biological Bridge",
+      "coordinates": [0.7, 0.8, 0.6, 0.4, 0.5],
+      "axioms": [
+        "τ_collapse = ħ / E_G",
+        "Γ = (2π/ħ)|V_fi|²ρ(E_f) × f(T, pH, [ATP])"
+      ],
+      "equations": [
+        {
+          "name": "Consciousness-Mediated Collapse Time",
+          "latex": "\\tau_{\\text{collapse}} = \\frac{\\hbar}{E_G}",
+          "description": "Wavefunction collapse time in biological systems."
+        },
+        {
+          "name": "Quantum-Biological Transition Rate",
+          "latex": "\\Gamma = \\frac{2\\pi}{\\hbar} |V_{fi}|^2 \\rho(E_f) \\times f(T, \\text{pH}, [\\text{ATP}])",
+          "description": "Fermi's Golden Rule adapted for biological quantum processes."
+        },
+        {
+          "name": "Consciousness-Loaded Schrödinger",
+          "latex": "i\\hbar \\frac{\\partial \\psi}{\\partial t} = H\\psi + \\lambda C(\\psi, \\text{observer})",
+          "description": "Schrödinger equation with observer-dependent term."
+        },
+        {
+          "name": "Entropic Gravity",
+          "latex": "\\nabla \\cdot g = 4\\pi G(\\rho_{\\text{mass}} + \\alpha S / k_B)",
+          "description": "Gravity modified by entropy density."
+        }
+      ],
+      "mechanisms": [
+        "Microtubule Resonance",
+        "Orchestrated Coherence",
+        "Biological Quantum Tunneling",
+        "Information-Mass Conversion"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Innovation Score",
+      "formula": "I = 0.3N + 0.25A + 0.2P_i + 0.15(1-C) + 0.1(E_p/300)",
+      "variables": {
+        "N": "novelty",
+        "A": "alienness",
+        "P_i": "paradox intensity",
+        "C": "coherence",
+        "E_p": "entropic potential"
+      }
+    },
+    {
+      "name": "Ontology Coherence",
+      "formula": "C(ontology) = 1 - Σ_i Σ_j |A_i ∧ ¬A_j|/N",
+      "description": "Internal consistency measure."
+    },
+    {
+      "name": "Paradox Intensity",
+      "formula": "Π = |⟨Ψ|P|Ψ⟩ - ⟨Ψ|¬P|Ψ⟩| / √(⟨Ψ|P²|Ψ⟩⟨Ψ|(¬P)²|Ψ⟩)",
+      "range": "1.0–3.0"
+    },
+    {
+      "name": "Entropic Potential",
+      "range": "226.96–322.366"
+    },
+    {
+      "name": "Alienness",
+      "range": "3.503–8.907"
+    },
+    {
+      "name": "Elegance",
+      "range": "80–95"
+    }
+  ],
+  "phase_transition_criteria": {
+    "sophia_point_condition": "|C - 0.618| < 0.02 AND P_i > 1.8 AND mechanism_hybridity > 0.33",
+    "critical_exponents": {
+      "ν": 0.63,
+      "β": 0.33,
+      "γ": 1.24
+    },
+    "phase_transition_operator": "Φ_SOPHIA = exp(2πi × |C - 0.618|), eigenvalues = {1, e^{±2πi/3}}"
+  },
+  "algorithms": [
+    {
+      "name": "MOGOPS Production Algorithm",
+      "pseudocode": "while True:\n    op = select_operator([\"Ĉ\", \"∇ₒ\", \"Ωᵥ\", \"Ω_Σ\"])\n    mechs = sample_mechanisms(3, weights=[P, 1-|P-0.5|, 1-P])\n    form = encode_mathematically(paradox_type)\n    consequence = matrix_multiply(mechs, form, seed.T)\n    if (coherence > 0.6 and novelty > 0.9) or (P_i > 1.5 and elegance > 85):\n        yield Ontology(seed, mechs, form, consequence, metrics)"
+    },
+    {
+      "name": "Reality Weaving Algorithm",
+      "pseudocode": "1. Initialize superposition |Ψ⟩ = Σ_i c_i |i⟩\n2. For each observer o in O:\n   - Apply entanglement operator E_o\n   - Amplify effect via A_o\n   - Create retrocausal feedback F_o\n3. Collapse via participatory measure P = Σ_o w_o M_o\n4. Manifest R = P(|Ψ⟩⟨Ψ|)"
+    },
+    {
+      "name": "Autopoietic Computational Loop",
+      "pseudocode": "while True:\n    reality = execute(reality_code)\n    reality_code = encode(reality)"
+    },
+    {
+      "name": "Retrocausal Optimization",
+      "pseudocode": "while not converged:\n    solution = solve_forward(problem, guess)\n    future_fitness = evaluate_in_future_context(solution)\n    correction = propagate_backward(future_fitness, present_state)\n    guess = update(guess, correction)"
+    }
+  ]
+}
+```
+
+---
+
+### 2. Updated `mogops_equation_forge.py` (loads JSON)
+```python
+"""
+mogops_equation_forge.py – Full MOGOPS Production Algorithm & Equation Forge.
+Now loads all equations, operators, and mechanisms from mogops_equations.json.
+"""
+
+import json
+import random
+import math
+import os
+from typing import Dict, Any, Callable, List, Tuple
+
+# Load the JSON file (assumed to be in same directory)
+_JSON_PATH = os.path.join(os.path.dirname(__file__), 'mogops_equations.json')
+with open(_JSON_PATH, 'r') as f:
+    MOGOPS_DATA = json.load(f)
+
+# Extract constants
+PHI = MOGOPS_DATA['constants']['PHI']
+INV_PHI = MOGOPS_DATA['constants']['INV_PHI']
+SOPHIA_POINT = MOGOPS_DATA['constants']['SOPHIA_POINT']
+
+# Build operator lookup
+OPERATORS = {op['symbol']: op for op in MOGOPS_DATA['operators']}
+
+# Build ontology mechanisms lookup
+ONTOLOGY_MECHANISMS = {}
+for onto in MOGOPS_DATA['ontologies']:
+    ONTOLOGY_MECHANISMS[onto['name']] = onto['mechanisms']
+
+# Phase transition criteria (simplified)
+PHASE_TRANSITION_CRITERIA = MOGOPS_DATA['phase_transition_criteria']
+
+
+def forge_enhanced_equation(
+    enh_id: int,
+    base_eq: str,
+    context: Dict[str, Any]
+) -> Callable[[Dict[str, Any]], float]:
+    """
+    MOGOPS Production Algorithm – merges a base equation with operators,
+    mechanisms, and the Sophia point, using data loaded from JSON.
+    """
+    # 1. Deterministic seeding based on enh_id (for reproducibility)
+    random.seed(enh_id)
+
+    # 2. Extract context metrics (with defaults)
+    P_i = context.get('paradox_intensity', 1.0)
+    C   = context.get('coherence', 0.7)
+    N   = context.get('novelty', 0.5)
+    A   = context.get('alienness', 5.0)
+    E_p = context.get('entropic_potential', 250.0)
+    coords = context.get('phase_space_coords', (1.0, 1.0, 2.0, 2.0, 0.5))
+
+    # 3. Select operator using weighted probabilities (from algorithm)
+    op_weights = [
+        0.3 * (1 + P_i),                     # Ĉ
+        0.25 * (1 - abs(P_i - 0.5)),         # ∇_O
+        0.2 * (1 - P_i),                      # Ω_V
+        0.15 * C,                              # Ω_Σ
+        0.1 * (1 + math.sin(P_i * math.pi))    # ⊕
+    ]
+    op_symbols = list(OPERATORS.keys())
+    op_symbol = random.choices(op_symbols, weights=op_weights)[0]
+    operator_info = OPERATORS[op_symbol]
+
+    # 4. Sample three mechanisms from three randomly chosen ontologies
+    ontology_names = list(ONTOLOGY_MECHANISMS.keys())
+    chosen_ontologies = random.sample(ontology_names, 3)
+    mechanisms = []
+    for onto in chosen_ontologies:
+        mech = random.choice(ONTOLOGY_MECHANISMS[onto])
+        mechanisms.append((onto, mech))
+
+    # 5. Encode paradox type mathematically (simplified)
+    paradox_type = context.get('paradox_type', 'meta_ontological')
+    encoded_paradox = math.sin(P_i * math.pi) * math.cos(C * math.pi)
+
+    # 6. Compute consequence (simplified)
+    consequence = 0.0
+    for i, (onto, mech) in enumerate(mechanisms):
+        # Here you could use a more sophisticated coherence measure
+        onto_coherence = 0.8  # placeholder
+        consequence += onto_coherence * (i + 1) * encoded_paradox
+
+    # 7. Check phase transition criteria
+    phase_transition = False
+    # Parse the condition string (simplified; real implementation would eval)
+    if abs(C - SOPHIA_POINT) < 0.02 and P_i > 1.8 and len(mechanisms) == 3:
+        phase_transition = True
+
+    # 8. Build merged expression for logging
+    merged_expr = f"{base_eq} ⊗ {op_symbol}({mechanisms}) · φ"
+    if phase_transition:
+        merged_expr += " ⨯ Φ_SOPHIA"
+
+    # 9. Define compute function
+    def compute(state: Dict[str, Any]) -> float:
+        # Evaluate base equation (simplified)
+        base_val = _evaluate_base_equation(base_eq, state)
+
+        # Apply operator effect (simplified)
+        op_val = _apply_operator_effect(op_symbol, base_val, state, context)
+
+        # Mechanisms contribution
+        mech_val = 0.0
+        for onto, mech in mechanisms:
+            mech_func = _get_mechanism_function(onto, mech)
+            mech_val += mech_func(state)
+
+        # Combine with Sophia point
+        result = (op_val + mech_val) * INV_PHI
+
+        # Apply phase transition if active
+        if phase_transition:
+            # Simple amplification
+            result *= (1 + 0.1 * math.sin(P_i * math.pi))
+
+        return result
+
+    return compute
+
+
+def _evaluate_base_equation(base_eq: str, state: Dict[str, Any]) -> float:
+    """Simplified evaluation of base equation strings."""
+    if "random" in base_eq:
+        return random.random()
+    elif "forecast" in base_eq:
+        return state.get('drift', 0.0)
+    elif "sophia" in base_eq:
+        return state.get('sophia_score', 0.5)
+    else:
+        return 1.0
+
+
+def _apply_operator_effect(op_symbol: str, base_val: float,
+                            state: Dict[str, Any], context: Dict[str, Any]) -> float:
+    """Apply a MOGOPS operator's effect (simplified)."""
+    # In a full implementation, each operator would have a specific function.
+    # Here we just return base_val modified by some factor.
+    if op_symbol == 'Ĉ':
+        # Creation: increase by novelty
+        novelty = context.get('novelty', 0.5)
+        return base_val * (1 + novelty)
+    elif op_symbol == '∇_O':
+        # Entailment gradient: adjust by coherence change
+        return base_val * state.get('coherence', 1.0)
+    elif op_symbol == 'Ω_V':
+        # Via triad: average of three random factors
+        return base_val * (random.random() + random.random() + random.random()) / 3
+    elif op_symbol == 'Ω_Σ':
+        # Encoding bridge: complex phase factor (real part)
+        return base_val * math.cos(math.pi / 3)
+    elif op_symbol == '⊕':
+        # Participatory weave: combine with observer intention (simplified)
+        return base_val * (1 + context.get('observer_intention', 0))
+    else:
+        return base_val
+
+
+def _get_mechanism_function(ontology: str, mechanism: str) -> Callable:
+    """Return a function that computes the effect of a mechanism."""
+    # In a real system, you would have a registry mapping (ontology, mechanism)
+    # to a callable. Here we return a placeholder.
+    def default_mech(state):
+        return state.get('coherence', 0.5) * 0.1
+    return default_mech
+
+
+__all__ = ['forge_enhanced_equation', 'PHI', 'INV_PHI', 'SOPHIA_POINT']
+```
+
+---
+
+### How to Use
+1. Place both files in the `src/` directory of your project.
+2. Ensure `mogops_equations.json` is readable by the Python script.
+3. The forge now loads all operators, ontologies, mechanisms, and constants from the JSON, making it easy to update or extend the MOGOPS framework without changing code.
+
+This approach keeps the code clean and the data separate, fulfilling the request to “Add all mogops equations into a json file and get the script to utilize the .json.”
+
