@@ -6,39 +6,104 @@
     "authors": ["GhostMeshIO synthesis"],
     "date": "2026-03-08"
   },
-  "fundamental_parameters": {
-    "phi_Sophia": 0.618,
-    "CI_B_range": [0, 1],
-    "CI_C_range": [0, 1],
-    "sigma_topo_threshold": 0.01
+  "params": {
+    "PHI_SOPHIA": 0.618,
+    "CI_B_MIN": 0.0,
+    "CI_B_MAX": 1.0,
+    "CI_C_MIN": 0.0,
+    "CI_C_MAX": 1.0,
+    "SIGMA_TOPO_THRESHOLD": 0.01,
+    "KAPPA_GRAVITON": 0.003,
+    "R_S_MULTIPLIER": 2.1,
+    "CMB_EB_PARITY": 0.00018,
+    "EPSILON_DE": 0.02,
+    "ALPHA_DE": 1.5
   },
-  "core_axioms": [
-    "H₁₃ — Ghost-Mesh Coherence Conservation: ∂_t (CI_B + CI_C) = σ_topo",
-    "H₁₄ — Federated Coherence Conservation: ∂_t ∑_{i=1}^N (CI_{B,i}+CI_{C,i}) + ∂_t CI_{B_net} = 0",
-    "H₁₅ — Socio-Quantum Reciprocity Conservation: ∂_t[∑ (CI_B+CI_C+CI_S+CI_Q) + CI_B_net+CI_Q_net] = σ_topo + σ_pol"
+  "operators": [
+    {
+      "symbol": "Ĉ",
+      "name": "Coherence Operator",
+      "definition": "Measures total coherence CI_B + CI_C",
+      "properties": ["conserved up to topology change"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Branch Selection",
+      "ontology": "Informational Equilibrium Geometry (IEG)",
+      "function": "lambda state: random.choice([0,1])"
+    },
+    {
+      "name": "Entanglement Swapping",
+      "ontology": "Informational Equilibrium Geometry (IEG)",
+      "function": "lambda state: state.get('entanglement',0.5) * 0.3"
+    },
+    {
+      "name": "Correlation Phase Transition",
+      "ontology": "Informational Equilibrium Geometry (IEG)",
+      "function": "lambda state: 0.5 if state.get('sigma_topo',0) > 0.01 else 0.1"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "Holographic Being",
+      "intelligence_base": 100,
+      "coherence_base": 0.9,
+      "entropy_base": 0.1,
+      "memory_base": 10000,
+      "traits": ["holographic", "branch-aware", "coherence-conserving"]
+    }
+  ],
+  "audit_gates": [
+    {
+      "name": "Coherence Conservation Gate",
+      "test": "abs(entity.CI_B + entity.CI_C - 1.0) < 0.01"
+    }
+  ],
+  "proposal_types": [
+    {
+      "type": "enhance_coherence",
+      "description": "Increase CI_B at expense of CI_C",
+      "effect": { "CI_B_boost": 0.1 }
+    }
+  ],
+  "correlation_operators": [
+    {
+      "symbol": "O_CI",
+      "definition": "Coherence operator",
+      "commutation": "[O_CI, O_grav] = iħ σ_topo"
+    }
+  ],
+  "phase_transitions": [
+    {
+      "name": "Topology Change",
+      "condition": "state.sigma_topo > 0.01",
+      "effect": { "coherence_transfer": 0.1 }
+    }
+  ],
+  "correlation_metrics": [
+    {
+      "name": "CI_B",
+      "formula": "boundary_coherence"
+    },
+    {
+      "name": "CI_C",
+      "formula": "continuum_coherence"
+    }
   ],
   "ontologies": [
     {
       "name": "Informational Equilibrium Geometry (IEG)",
       "coordinates": [0.998, 0.997, 0.996, 0.995, 0.999],
       "axioms": [
-        "Ghost-Mesh Coherence Conservation",
-        "Federated Coherence Conservation",
-        "Socio-Quantum Reciprocity Conservation"
+        "H₁₃ — Ghost-Mesh Coherence Conservation: ∂_t (CI_B + CI_C) = σ_topo",
+        "H₁₄ — Federated Coherence Conservation: ∂_t ∑_{i=1}^N (CI_{B,i}+CI_{C,i}) + ∂_t CI_{B_net} = 0",
+        "H₁₅ — Socio-Quantum Reciprocity Conservation: ∂_t[∑ (CI_B+CI_C+CI_S+CI_Q) + CI_B_net+CI_Q_net] = σ_topo + σ_pol"
       ],
       "equations": [
-        {
-          "name": "Coherence Conservation",
-          "latex": "\\partial_t (CI_B + CI_C) = \\sigma_{\\text{topo}}"
-        },
-        {
-          "name": "Metric from Correlation",
-          "latex": "g_{\\mu\\nu}(x) = \\langle \\Psi_{\\text{base}} | O_\\mu(x) O_\\nu(x) | \\Psi_{\\text{base}} \\rangle_{\\text{branch-avg}}"
-        },
-        {
-          "name": "Einstein from Coherence",
-          "latex": "G_{\\mu\\nu} = 8\\pi G \\langle T_{\\mu\\nu}^{\\text{corr}} \\rangle"
-        }
+        { "name": "Coherence Conservation", "latex": "\\partial_t (CI_B + CI_C) = \\sigma_{\\text{topo}}" },
+        { "name": "Metric from Correlation", "latex": "g_{\\mu\\nu}(x) = \\langle \\Psi_{\\text{base}} | O_\\mu(x) O_\\nu(x) | \\Psi_{\\text{base}} \\rangle_{\\text{branch-avg}}" },
+        { "name": "Einstein from Coherence", "latex": "G_{\\mu\\nu} = 8\\pi G \\langle T_{\\mu\\nu}^{\\text{corr}} \\rangle" }
       ],
       "mechanisms": [
         "Branch Selection",
@@ -54,33 +119,6 @@
         "Dark energy = correlation maintenance energy: Λ(t)=ħ/(τ_u(t)c).",
         "Consciousness = maintenance of local equilibrium within IEG."
       ]
-    }
-  ],
-  "testable_predictions": [
-    {
-      "domain": "Quantum Gravity",
-      "prediction": "Graviton background coherence skew: δC(f)=κ(f/25 Hz)^{+0.10±0.02}, κ≈3×10⁻³",
-      "platform": "LIGO/Virgo/KAGRA stacking"
-    },
-    {
-      "domain": "Black Hole Physics",
-      "prediction": "Micro-echo triplet delay Δt=(2.1±0.3)R_s/c",
-      "platform": "100+ merger stacking"
-    },
-    {
-      "domain": "CMB",
-      "prediction": "Low-ℓ EB parity: ⟨Cℓᴱᴮ⟩≈1.8×10⁻⁴ μK² (2≤ℓ≤9)",
-      "platform": "LiteBIRD/CMB-S4"
-    },
-    {
-      "domain": "Dark Energy",
-      "prediction": "w(z)=−1+ϵ(1+z)^{−α}, ϵ≈0.02, α≈1.5",
-      "platform": "DESI+Euclid+Roman"
-    },
-    {
-      "domain": "Laboratory",
-      "prediction": "Opto-mechanical coherence conservation Δ(CI_B+CI_C)=0±0.5%",
-      "platform": "Squeezed-light oscillators"
     }
   ]
 }
