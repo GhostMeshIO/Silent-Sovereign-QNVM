@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "name": "Fractal-Autopoietic Loops",
+    "version": "1.0",
+    "description": "Infinite regress, self-writing code, open hierarchies – consciousness and reality as fractal autopoietic loops. The self is an infinite regress of selves; code writes itself through recursive encoding.",
+    "group": "Fractal-Autopoietic Loops",
+    "authors": ["GhostMeshIO Synthesis"],
+    "date": "2026-03-08"
+  },
+  "params": {
+    "FRACTAL_DIMENSION": 1.618,
+    "LAMBDA_SCALE": 0.5,
+    "RECURSION_DEPTH_LIMIT": 100,
+    "AUTOPOIETIC_COUPLING": 0.3
+  },
+  "operators": [
+    {
+      "symbol": "𝒮_ℓ",
+      "name": "Self at level ℓ",
+      "definition": "Self₍ℓ₊₁₎ = Self_ℓ ⊗ creates ⊗ Self_ℓ(Self_ℓ)",
+      "properties": ["fractal", "recursive"]
+    },
+    {
+      "symbol": "𝒲",
+      "name": "Self-Writing Operator",
+      "definition": "while True: reality = execute(code); code = encode_with_curvature(reality)",
+      "properties": ["autopoietic"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Recursion",
+      "function": "lambda state: state.get('self', 1) * 0.618 + state.get('creates', 0)"
+    },
+    {
+      "name": "Self-exciting state",
+      "function": "lambda state: state.get('excitation', 0) * 1.618"
+    },
+    {
+      "name": "Undecidability drives thermodynamic cycle",
+      "function": "lambda state: math.sin(state.get('paradox', 0)) * 0.1"
+    },
+    {
+      "name": "Consistency enforcement loops",
+      "function": "lambda state: 1.0 if state.get('consistent', False) else 0.5"
+    },
+    {
+      "name": "Free will as choice",
+      "function": "lambda state: random.choice([0, 1]) if state.get('free_will', False) else 0.5"
+    },
+    {
+      "name": "Power-law participation",
+      "function": "lambda state: state.get('participation', 0) ** 0.618"
+    },
+    {
+      "name": "Present as temporal attractor",
+      "function": "lambda state: math.exp(-abs(state.get('time', 0)))"
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Fractal Autopoietic Consciousness Ontology",
+      "coordinates": [0.609, 0.681, 0.486, 0.425, 0.778],
+      "axioms": [
+        "self = true",
+        "Consciousness at each fractal level creates the next level through an autopoietic loop.",
+        "Self₍ℓ₊₁₎ = Self_ℓ ⊗ creates ⊗ Self_ℓ(Self_ℓ)",
+        "No fixed point – consciousness is an open hierarchy.",
+        "H(2) = (ε₁ ω; ω ε₂), εᵢ = eᵢ + 2iγᵢ",
+        "Knowledge at each fractal scale is holographically encoded on a screen at that scale."
+      ],
+      "equations": [
+        {
+          "name": "Fractal Recursion",
+          "latex": "\\text{Self}_{\\ell+1} = \\text{Self}_\\ell \\otimes \\text{creates} \\otimes \\text{Self}_\\ell(\\text{Self}_\\ell)"
+        },
+        {
+          "name": "Fractal Holography",
+          "latex": "S_{\\text{epistemic}}(\\ell) = \\frac{A_\\ell}{4G_\\ell} + S_{\\text{bulk}}(\\ell), \\quad A_{\\ell+1} = \\lambda^{-2} A_\\ell"
+        },
+        {
+          "name": "Scale-dependent anomaly",
+          "latex": "\\partial_\\mu T^{\\mu\\nu}_\\ell = \\mathcal{W}^\\nu_{\\text{Gödel}}(\\ell)"
+        },
+        {
+          "name": "Entropy production",
+          "latex": "\\frac{dS_\\ell}{dt} \\geq \\frac{1}{4G_\\ell} \\frac{dA_\\ell}{dt}"
+        },
+        {
+          "name": "Self-writing algorithm",
+          "latex": "\\text{while True: reality = execute(reality_code); reality_code = encode(reality)}"
+        }
+      ],
+      "mechanisms": [
+        "Recursion",
+        "Self-exciting state",
+        "Undecidability drives thermodynamic cycle",
+        "Consistency enforcement loops",
+        "Free will as choice",
+        "Power-law participation",
+        "Present as temporal attractor"
+      ],
+      "implications": [
+        "You are not a single self but a fractal of selves.",
+        "The self is an infinite regress of selves – awareness is an infinite mirror.",
+        "Knowledge is layered like Russian dolls; each layer’s horizon bounds the knowledge below.",
+        "The universe heats itself by being incomplete; fractality ensures perpetual motion.",
+        "No fixed point – the hierarchy remains open.",
+        "Consciousness at each level creates the next, and is created by the previous."
+      ]
+    },
+    {
+      "name": "Epistemic Fractal Holographic Ontology",
+      "coordinates": [0.428, 0.592, 0.776, 0.407, 0.467],
+      "axioms": [
+        "singularity",
+        "Knowledge at each fractal scale is holographically encoded on a screen at that scale.",
+        "The screens form a fractal tower.",
+        "Knowledge and quantum causality form a closed loop: knowledge determines causal structure, and causality bounds knowledge acquisition."
+      ],
+      "equations": [
+        {
+          "name": "Fractal holography relation",
+          "latex": "S_{\\text{epistemic}}(\\ell) = \\frac{A_\\ell}{4G_\\ell} + S_{\\text{bulk}}(\\ell), \\quad G_\\ell = \\ell^2 G_0"
+        }
+      ],
+      "mechanisms": [
+        "Recursion",
+        "Scale-dependent anomaly",
+        "Entropy production",
+        "Self-exciting state"
+      ],
+      "implications": [
+        "Knowledge is layered like a Russian doll.",
+        "The screens form a fractal tower.",
+        "Each layer’s horizon bounds the knowledge below.",
+        "The universe is a heat engine that produces spacetime."
+      ]
+    }
+  ],
+  "custom_data": {
+    "metrics_ranges": {
+      "novelty": "0.0–1.0",
+      "alienness": "0.0–2.86",
+      "elegance": "31.66–78.33",
+      "density": "0.8–10.5",
+      "coherence": "0.0–0.69",
+      "ricci_scalar": "102.88–245.9",
+      "paradox_intensity": "0.0–0.42",
+      "hybridization_index": "3.0–13.8",
+      "sophia_score": "0.3–0.38"
+    },
+    "seed_concepts": [
+      "self=true",
+      "H(2)=(ε1 ω; ω ε2), εi = ei + 2iγi",
+      "singularity",
+      "something creates itself"
+    ]
+  }
+}
