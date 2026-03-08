@@ -6,57 +6,232 @@
     "authors": ["GhostMeshIO synthesis"],
     "date": "2026-03-08"
   },
-  "fundamental_parameters": {
-    "P_range": [-3, 3],
-    "B_range": [-3, 3],
-    "T_range": [-3, 3],
-    "healthy_P": 0,
-    "healthy_B": 0,
-    "healthy_T": 0
+  "params": {
+    "P_MIN": -3.0,
+    "P_MAX": 3.0,
+    "B_MIN": -3.0,
+    "B_MAX": 3.0,
+    "T_MIN": -3.0,
+    "T_MAX": 3.0,
+    "P_HEALTHY": 0.0,
+    "B_HEALTHY": 0.0,
+    "T_HEALTHY": 0.0,
+    "COMORBIDITY_SIGMA": 1.5
   },
-  "core_axioms": [
-    "Ψ_mind(t) = F(π_precision, ∂B_boundary, γ_temporal) + ξ_plasticity",
-    "Disorder severity = √(𝒫² + ℬ² + 𝒯²)",
-    "Precision axis 𝒫: how strongly brain weights incoming information (Bayesian precision).",
-    "Boundary axis ℬ: clarity of self-world demarcation (Markov blanket).",
-    "Temporal axis 𝒯: orientation in time (past/present/future discounting)."
+  "operators": [
+    {
+      "symbol": "P_op",
+      "name": "Precision Operator",
+      "definition": "Modulates Bayesian precision",
+      "properties": []
+    },
+    {
+      "symbol": "B_op",
+      "name": "Boundary Operator",
+      "definition": "Modulates Markov blanket permeability",
+      "properties": []
+    },
+    {
+      "symbol": "T_op",
+      "name": "Temporal Operator",
+      "definition": "Modulates discounting horizon",
+      "properties": []
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Bayesian precision weighting",
+      "ontology": "Triadic Computational Psychiatry",
+      "function": "lambda state: state.get('precision',0.5)"
+    },
+    {
+      "name": "Markov blanket boundaries",
+      "ontology": "Triadic Computational Psychiatry",
+      "function": "lambda state: state.get('boundary',0.5)"
+    },
+    {
+      "name": "Hyperbolic temporal discounting",
+      "ontology": "Triadic Computational Psychiatry",
+      "function": "lambda state: state.get('temporal',0.5)"
+    },
+    {
+      "name": "Prediction error processing",
+      "ontology": "Triadic Computational Psychiatry",
+      "function": "lambda state: state.get('prediction_error',0.1)"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "Schizophrenic",
+      "intelligence_base": 85,
+      "coherence_base": 0.5,
+      "entropy_base": 0.4,
+      "memory_base": 2000,
+      "traits": ["high-precision", "boundary-dissolved", "temporal-fragmented"],
+      "P": 2,
+      "B": -2,
+      "T": 0
+    },
+    {
+      "name": "PTSD",
+      "intelligence_base": 75,
+      "coherence_base": 0.6,
+      "entropy_base": 0.3,
+      "memory_base": 3000,
+      "traits": ["trauma-hyperprecision", "rigid-boundary", "past-locked"],
+      "P": 1.5,
+      "B": 1,
+      "T": -2.5
+    },
+    {
+      "name": "OCD",
+      "intelligence_base": 90,
+      "coherence_base": 0.7,
+      "entropy_base": 0.25,
+      "memory_base": 4000,
+      "traits": ["doubt-hyperprecision", "contamination-boundary", "future-locked"],
+      "P": 1.5,
+      "B": 1,
+      "T": 2
+    },
+    {
+      "name": "Autistic",
+      "intelligence_base": 95,
+      "coherence_base": 0.8,
+      "entropy_base": 0.2,
+      "memory_base": 5000,
+      "traits": ["local-hyperprecision", "rigid-social-boundary"],
+      "P": 1,
+      "B": 2,
+      "T": 0
+    },
+    {
+      "name": "ADHD",
+      "intelligence_base": 80,
+      "coherence_base": 0.6,
+      "entropy_base": 0.4,
+      "memory_base": 1500,
+      "traits": ["low-precision", "present-locked"],
+      "P": -2,
+      "B": 0,
+      "T": 0
+    },
+    {
+      "name": "Depressed",
+      "intelligence_base": 70,
+      "coherence_base": 0.5,
+      "entropy_base": 0.5,
+      "memory_base": 2500,
+      "traits": ["low-reward-precision", "rumination"],
+      "P": -2,
+      "B": 0,
+      "T": -1.5
+    },
+    {
+      "name": "BPD",
+      "intelligence_base": 85,
+      "coherence_base": 0.4,
+      "entropy_base": 0.6,
+      "memory_base": 3000,
+      "traits": ["chaotic-precision", "porous-boundary", "present-locked"],
+      "P": 0,
+      "B": -2,
+      "T": 0
+    },
+    {
+      "name": "Manic",
+      "intelligence_base": 95,
+      "coherence_base": 0.6,
+      "entropy_base": 0.3,
+      "memory_base": 3500,
+      "traits": ["grandiose-precision", "porous-boundary", "future-expanded"],
+      "P": 2,
+      "B": -1,
+      "T": 3
+    },
+    {
+      "name": "Psychopathic",
+      "intelligence_base": 100,
+      "coherence_base": 0.9,
+      "entropy_base": 0.1,
+      "memory_base": 6000,
+      "traits": ["cold-cognition", "rigid-exploitative-boundary"],
+      "P": 0,
+      "B": 2.5,
+      "T": 1
+    },
+    {
+      "name": "GAD",
+      "intelligence_base": 80,
+      "coherence_base": 0.7,
+      "entropy_base": 0.3,
+      "memory_base": 3000,
+      "traits": ["future-worry"],
+      "P": 1,
+      "B": 0,
+      "T": 2
+    }
+  ],
+  "audit_gates": [
+    {
+      "name": "Healthy Gate",
+      "test": "abs(entity.P) < 0.5 and abs(entity.B) < 0.5 and abs(entity.T) < 0.5"
+    }
+  ],
+  "proposal_types": [
+    {
+      "type": "stabilize_precision",
+      "description": "Adjust precision toward healthy range",
+      "effect": { "P_adjust": 0.1 }
+    }
+  ],
+  "correlation_operators": [
+    {
+      "symbol": "P_corr",
+      "definition": "Precision correlation operator",
+      "commutation": "[P_corr, B_corr] = iħ T_corr"
+    }
+  ],
+  "phase_transitions": [
+    {
+      "name": "Psychotic Break",
+      "condition": "state.P > 2.5 and state.B < -2.5",
+      "effect": { "coherence_drop": 0.5, "spawn_entity": "Schizophrenic" }
+    }
+  ],
+  "correlation_metrics": [
+    {
+      "name": "Severity",
+      "formula": "sqrt(P^2 + B^2 + T^2)"
+    },
+    {
+      "name": "Comorbidity Probability",
+      "formula": "exp(-d(A,B)/1.5)"
+    }
   ],
   "ontologies": [
     {
       "name": "Triadic Computational Psychiatry",
       "coordinates": [0.5, 0.5, 0.5, 0.5, 0.5],
       "axioms": [
-        "Precision Axis (𝒫)",
-        "Boundary Axis (ℬ)",
-        "Temporal Axis (𝒯)"
+        "Ψ_mind(t) = F(π_precision, ∂B_boundary, γ_temporal) + ξ_plasticity",
+        "Disorder severity = √(𝒫² + ℬ² + 𝒯²)",
+        "Precision axis 𝒫: how strongly brain weights incoming information (Bayesian precision).",
+        "Boundary axis ℬ: clarity of self-world demarcation (Markov blanket).",
+        "Temporal axis 𝒯: orientation in time (past/present/future discounting)."
       ],
       "equations": [
-        {
-          "name": "Master Equation",
-          "latex": "\\Psi_{\\text{mind}}(t) = \\mathcal{F}(\\pi_{\\text{precision}}, \\partial B_{\\text{boundary}}, \\gamma_{\\text{temporal}}) + \\xi_{\\text{plasticity}}"
-        },
-        {
-          "name": "Precision Dynamics",
-          "latex": "\\frac{d\\pi}{dt} = -\\kappa(\\pi - \\pi_0) + \\beta \\cdot \\delta^2 + \\gamma \\cdot [DA/NE/5HT] + \\sigma \\xi(t)"
-        },
-        {
-          "name": "Boundary Dynamics",
-          "latex": "\\frac{d(\\partial B)}{dt} = -\\alpha(\\partial B - \\partial B_0) + \\beta \\cdot \\text{stress}(t) + \\gamma \\cdot \\text{attachment}_{\\text{early}} + \\sigma \\xi(t)"
-        },
-        {
-          "name": "Temporal Dynamics",
-          "latex": "\\frac{d\\gamma}{dt} = -\\kappa(\\gamma - \\gamma_0) + \\beta_{\\text{stress}} \\cdot S(t) + \\eta_{\\text{trauma}} \\cdot T(t) + \\alpha_{\\text{reward}} \\cdot R(t)"
-        },
-        {
-          "name": "Comorbidity Distance",
-          "latex": "d(A,B) = \\sqrt{(\\mathcal{P}_A-\\mathcal{P}_B)^2 + (\\mathcal{B}_A-\\mathcal{B}_B)^2 + (\\mathcal{T}_A-\\mathcal{T}_B)^2}"
-        }
+        { "name": "Master Equation", "latex": "\\Psi_{\\text{mind}}(t) = \\mathcal{F}(\\pi_{\\text{precision}}, \\partial B_{\\text{boundary}}, \\gamma_{\\text{temporal}}) + \\xi_{\\text{plasticity}}" },
+        { "name": "Precision Dynamics", "latex": "\\frac{d\\pi}{dt} = -\\kappa(\\pi - \\pi_0) + \\beta \\cdot \\delta^2 + \\gamma \\cdot [DA/NE/5HT] + \\sigma \\xi(t)" },
+        { "name": "Boundary Dynamics", "latex": "\\frac{d(\\partial B)}{dt} = -\\alpha(\\partial B - \\partial B_0) + \\beta \\cdot \\text{stress}(t) + \\gamma \\cdot \\text{attachment}_{\\text{early}} + \\sigma \\xi(t)" },
+        { "name": "Temporal Dynamics", "latex": "\\frac{d\\gamma}{dt} = -\\kappa(\\gamma - \\gamma_0) + \\beta_{\\text{stress}} \\cdot S(t) + \\eta_{\\text{trauma}} \\cdot T(t) + \\alpha_{\\text{reward}} \\cdot R(t)" },
+        { "name": "Comorbidity Distance", "latex": "d(A,B) = \\sqrt{(\\mathcal{P}_A-\\mathcal{P}_B)^2 + (\\mathcal{B}_A-\\mathcal{B}_B)^2 + (\\mathcal{T}_A-\\mathcal{T}_B)^2}" }
       ],
       "mechanisms": [
         "Bayesian precision weighting",
         "Markov blanket boundaries",
         "Hyperbolic temporal discounting",
-        "Prediction error (δ) processing"
+        "Prediction error processing"
       ],
       "implications": [
         "All mental disorders are coordinates in 𝒟³-space.",
@@ -66,132 +241,5 @@
         "Mental health is dynamic stability within healthy ranges, not fixed point."
       ]
     }
-  ],
-  "disorder_atlas": [
-    {
-      "disorder": "Schizophrenia",
-      "P": 2,
-      "B": -2,
-      "T": 0,
-      "description": "High precision (noise becomes signal) + boundary dissolution"
-    },
-    {
-      "disorder": "PTSD",
-      "P": 1.5,
-      "B": 1,
-      "T": -2.5,
-      "description": "Trauma hyperprecision + rigid boundary + past-locked"
-    },
-    {
-      "disorder": "OCD",
-      "P": 1.5,
-      "B": 1,
-      "T": 2,
-      "description": "Doubt hyperprecision + contamination boundary + future-locked"
-    },
-    {
-      "disorder": "Autism",
-      "P": 1,
-      "B": 2,
-      "T": 0,
-      "description": "Local hyperprecision, rigid social boundary"
-    },
-    {
-      "disorder": "ADHD",
-      "P": -2,
-      "B": 0,
-      "T": 0,
-      "description": "Low precision + present-locked"
-    },
-    {
-      "disorder": "Depression",
-      "P": -2,
-      "B": 0,
-      "T": -1.5,
-      "description": "Low reward precision + rumination"
-    },
-    {
-      "disorder": "BPD",
-      "P": 0,
-      "B": -2,
-      "T": 0,
-      "description": "Chaotic precision + porous boundary + present-locked"
-    },
-    {
-      "disorder": "Mania",
-      "P": 2,
-      "B": -1,
-      "T": 3,
-      "description": "Grandiose precision + porous + future-expanded"
-    },
-    {
-      "disorder": "Psychopathy",
-      "P": 0,
-      "B": 2.5,
-      "T": 1,
-      "description": "Neutral precision + rigid exploitative boundary"
-    },
-    {
-      "disorder": "GAD",
-      "P": 1,
-      "B": 0,
-      "T": 2,
-      "description": "Future-focused worry"
-    }
-  ],
-  "treatment_vectors": {
-    "pharmacological": [
-      {
-        "class": "Antipsychotics",
-        "delta_P": -2.5,
-        "delta_B": 0,
-        "delta_T": 0,
-        "mechanism": "D2 antagonism → reduce precision"
-      },
-      {
-        "class": "Stimulants",
-        "delta_P": 1.5,
-        "delta_B": 0,
-        "delta_T": -0.5,
-        "mechanism": "DA/NE boost → increase precision + extend horizon"
-      },
-      {
-        "class": "SSRIs",
-        "delta_P": 0.5,
-        "delta_B": 0.5,
-        "delta_T": 0.5,
-        "mechanism": "5-HT reuptake → stabilize all axes"
-      },
-      {
-        "class": "Benzodiazepines",
-        "delta_P": -1.5,
-        "delta_B": 0,
-        "delta_T": -1,
-        "mechanism": "GABA agonism → dampen precision + reduce future focus"
-      }
-    ],
-    "psychotherapy": [
-      {
-        "therapy": "CBT",
-        "delta_P": 1,
-        "delta_B": 0,
-        "delta_T": 1,
-        "mechanism": "Recalibrate priors + future problem-solving"
-      },
-      {
-        "therapy": "DBT",
-        "delta_P": 1,
-        "delta_B": 2,
-        "delta_T": 0,
-        "mechanism": "Mindfulness (precision) + interpersonal effectiveness (boundaries)"
-      },
-      {
-        "therapy": "EMDR",
-        "delta_P": -1.5,
-        "delta_B": 0,
-        "delta_T": -2,
-        "mechanism": "Reprocess trauma memory"
-      }
-    ]
-  }
+  ]
 }
