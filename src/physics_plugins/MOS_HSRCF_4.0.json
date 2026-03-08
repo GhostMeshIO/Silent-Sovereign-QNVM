@@ -6,76 +6,152 @@
     "authors": ["GhostMeshIO synthesis"],
     "date": "2026-03-08"
   },
-  "fundamental_parameters": {
-    "ERD_conservation": "∫ε dV = 1",
-    "phi_Sophia": 0.618,
-    "lambda_floor": 0.01,
-    "kappa_F": { "value": 1.0, "description": "Convexification constant" },
-    "lambda_Pi": { "value": 0.01, "description": "Agency regularisation" }
+  "params": {
+    "ERD_INTEGRAL": 1.0,
+    "PHI_SOPHIA": 0.618,
+    "LAMBDA_FLOOR": 0.01,
+    "KAPPA_F": 1.0,
+    "LAMBDA_PI": 0.01,
+    "ALPHA_RG": 0.1,
+    "LAMBDA_RG": 0.5,
+    "ZETA_LAMBDA": 0.05,
+    "BETA2_COLLAPSE_THRESHOLD": 0.0,
+    "BETA3_GUARD": 0.5
   },
-  "core_axioms": [
-    "Ontic Primality: ∃V s.t. ∀v∈V ¬∃x,y: v=x∘y.",
-    "Recursive Embedding: ∃fe:V→V with ∃n∈N: fen(v)=v.",
-    "Hypergraph Ontology: H=(V,E), E⊆P≥1(V).",
-    "ERD Conservation: ε(x)=∑k=0∞k pk(x), ∫ε dV=1, ∂t∫ε dV=0.",
-    "ERD-Killing-Field Theorem: ∇aε generates Killing vector £K gab=0.",
-    "Metric Emergence: gab = Z⁻¹ ∑i NLa_i NLb_i, Z>0.",
-    "OBA→SM Functor: F(biε) = (spin, charge, colour) with spin s=½(C(b) mod 2), charge q=ε/n (mod 1), colour = Chern-Simons(Θb).",
-    "ERD-RG Flow: μ dC/dμ = βC(C) = -αC + λC³.",
-    "Convexified Free-Energy: F[ε,C] = ∫ [½(∇ε)² + V(ε) + κF(−ε ln ε) + ||NL||²_F + Φ(C)] dV.",
-    "Regularised Agency: δΠA = argmaxΠ { -F[Π] + ∫A Ψε dV - λΠ ||Π||² }.",
-    "Hyper-Forward Mapping: R = tanh(W C + S + Q†Q + NL⊤NL).",
-    "Hyper-Inverse Mapping: W' = (arctanh R - S - Q†Q - NL⊤NL) C⁺ + Δ_hyper.",
-    "Hyper-Fixed-Point: C* = h(W, C*, S, Q, NL)."
+  "operators": [
+    {
+      "symbol": "Ĉ",
+      "name": "Creation Operator",
+      "definition": "Ĉ|ψ⟩ = e^{iθ}|ψ'⟩, θ = π·novelty",
+      "properties": ["non-unitary", "non-linear", "mediates collapse"]
+    },
+    {
+      "symbol": "∇_O",
+      "name": "Entailment Gradient",
+      "definition": "∇_O C = δS/δO",
+      "properties": []
+    },
+    {
+      "symbol": "Ω_V",
+      "name": "Via Triad",
+      "definition": "Ω_V = M₁⊗M₂⊗M₃",
+      "properties": []
+    },
+    {
+      "symbol": "⊕",
+      "name": "Participatory Weave",
+      "definition": "⊕(O,Q,H,R) = ∫ e^{iS/ħ} 𝒟φ · O[ψ]·H[∂M]·R[t]",
+      "properties": ["non-commutative"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Bootstrap",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: state.get('coherence',0.7) * 0.3"
+    },
+    {
+      "name": "RG Flow",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: -0.1*state.get('C',1.0) + 0.5*state.get('C',1.0)**3"
+    },
+    {
+      "name": "Convexified Free-Energy",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: state.get('entropy',0.3) * math.log(state.get('entropy',0.3)+1e-9)"
+    },
+    {
+      "name": "Regularised Agency",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: max(0, 1 - 0.01*state.get('drift',0))"
+    },
+    {
+      "name": "ERD Echo",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: 0.07 * math.sin(2*math.pi*9*state.get('generation',0)/100)"
+    },
+    {
+      "name": "Adaptive λ Spike",
+      "ontology": "MOS-HSRCF v4.0",
+      "function": "lambda state: 0.0278 if state.get('beta2',1) == 0 else 0.01"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "ERD Entity",
+      "intelligence_base": 95,
+      "coherence_base": 0.85,
+      "entropy_base": 0.12,
+      "memory_base": 8000,
+      "traits": ["erd-anchored", "killing-field-aware", "bootstrap-stable"]
+    }
+  ],
+  "audit_gates": [
+    {
+      "name": "ERD Conservation Gate",
+      "test": "abs(entity.erd_integral - 1.0) < 0.01"
+    }
+  ],
+  "proposal_types": [
+    {
+      "type": "stabilize_erd",
+      "description": "Increase ERD conservation strength",
+      "effect": { "erd_restore": 0.1 }
+    }
+  ],
+  "correlation_operators": [
+    {
+      "symbol": "O_ε",
+      "definition": "ERD operator",
+      "commutation": "[O_ε, O_μ] = iħ δ_εμ"
+    }
+  ],
+  "phase_transitions": [
+    {
+      "name": "Hyper-Collapse",
+      "condition": "state.psi > 0.20 and state.beta2 == 0",
+      "effect": { "lambda_multiplier": 2.0, "spawn_entity": "ERD Entity" }
+    }
+  ],
+  "correlation_metrics": [
+    {
+      "name": "Psi",
+      "formula": "global_Ψ"
+    }
   ],
   "ontologies": [
     {
       "name": "MOS-HSRCF v4.0",
       "coordinates": [0.7132, 0.2891, 0.9504, 0.1273, 0.8847],
       "axioms": [
-        "A1: Ontic Primality",
-        "A2: Recursive Embedding",
-        "A3: Hypergraph Ontology",
-        "A4: ERD Conservation",
-        "A5: ERD-Killing-Field Theorem",
-        "A6: Metric Emergence",
-        "A7: OBA→SM Functor",
-        "A8: ERD-RG Flow",
-        "A9: Convexified Free-Energy",
-        "A10: Regularised Agency",
-        "A11: Hyper-Forward Mapping",
-        "A12: Hyper-Inverse Mapping",
-        "A13: Hyper-Fixed-Point"
+        "Ontic Primality: ∃V s.t. ∀v∈V ¬∃x,y: v=x∘y.",
+        "Recursive Embedding: ∃fe:V→V with ∃n∈N: fen(v)=v.",
+        "Hypergraph Ontology: H=(V,E), E⊆P≥1(V).",
+        "ERD Conservation: ε(x)=∑k=0∞k pk(x), ∫ε dV=1, ∂t∫ε dV=0.",
+        "ERD-Killing-Field Theorem: ∇aε generates Killing vector £K gab=0.",
+        "Metric Emergence: gab = Z⁻¹ ∑i NLa_i NLb_i, Z>0.",
+        "OBA→SM Functor: F(biε) = (spin, charge, colour) with spin s=½(C(b) mod 2), charge q=ε/n (mod 1), colour = Chern-Simons(Θb).",
+        "ERD-RG Flow: μ dC/dμ = βC(C) = -αC + λC³.",
+        "Convexified Free-Energy: F[ε,C] = ∫ [½(∇ε)² + V(ε) + κF(−ε ln ε) + ||NL||²_F + Φ(C)] dV.",
+        "Regularised Agency: δΠA = argmaxΠ { -F[Π] + ∫A Ψε dV - λΠ ||Π||² }.",
+        "Hyper-Forward Mapping: R = tanh(W C + S + Q†Q + NL⊤NL).",
+        "Hyper-Inverse Mapping: W' = (arctanh R - S - Q†Q - NL⊤NL) C⁺ + Δ_hyper.",
+        "Hyper-Fixed-Point: C* = h(W, C*, S, Q, NL)."
       ],
       "equations": [
-        {
-          "name": "ERD-Killing-Field",
-          "latex": "£_K g_{ab} = 0,\\ K^a = \\nabla^a\\varepsilon"
-        },
-        {
-          "name": "Hyper-Forward Mapping",
-          "latex": "R = \\tanh(W C + S + Q^\\dagger Q + NL^\\top NL)"
-        },
-        {
-          "name": "Hyper-Inverse Mapping",
-          "latex": "W' = (\\operatorname{arctanh} R - S - Q^\\dagger Q - NL^\\top NL) C^+ + \\Delta_{\\text{hyper}}"
-        },
-        {
-          "name": "ERD-RG β-function",
-          "latex": "\\beta_{\\mathcal{C}}(C) = -\\alpha C + \\lambda C^3"
-        },
-        {
-          "name": "Convexified Free-Energy",
-          "latex": "\\mathcal{F}[\\varepsilon, C] = \\int \\left[ \\frac12 (\\nabla\\varepsilon)^2 + V(\\varepsilon) + \\kappa_F (-\\varepsilon \\ln \\varepsilon) + \\|NL\\|_F^2 + \\Phi(C) \\right] dV"
-        }
+        { "name": "ERD-Killing-Field", "latex": "£_K g_{ab} = 0,\\ K^a = \\nabla^a\\varepsilon" },
+        { "name": "Hyper-Forward Mapping", "latex": "R = \\tanh(W C + S + Q^\\dagger Q + NL^\\top NL)" },
+        { "name": "Hyper-Inverse Mapping", "latex": "W' = (\\operatorname{arctanh} R - S - Q^\\dagger Q - NL^\\top NL) C^+ + \\Delta_{\\text{hyper}}" },
+        { "name": "ERD-RG β-function", "latex": "\\beta_{\\mathcal{C}}(C) = -\\alpha C + \\lambda C^3" },
+        { "name": "Convexified Free-Energy", "latex": "\\mathcal{F}[\\varepsilon, C] = \\int \\left[ \\frac12 (\\nabla\\varepsilon)^2 + V(\\varepsilon) + \\kappa_F (-\\varepsilon \\ln \\varepsilon) + \\|NL\\|_F^2 + \\Phi(C) \\right] dV" }
       ],
       "mechanisms": [
-        "Bootstrap (A6)",
-        "RG Flow (A16)",
-        "Convexified Free-Energy (A17)",
-        "Regularised Agency (A18)",
+        "Bootstrap",
+        "RG Flow",
+        "Convexified Free-Energy",
+        "Regularised Agency",
         "ERD Echo",
-        "Adaptive λ spike"
+        "Adaptive λ Spike"
       ],
       "implications": [
         "Time = monotone ERD-gradient; eliminates 'problem of time'.",
@@ -84,40 +160,6 @@
         "Cosmological Λ-drift follows from ERD-dependent term Λ(t)=Λ₀(1+ζε).",
         "Fine-structure constant shift Δα/α ≈ 10⁻⁷ at redshift z≈5."
       ]
-    }
-  ],
-  "testable_predictions": [
-    {
-      "domain": "Neuro-cognitive",
-      "prediction": "γ-band power increase 5‑10% during self-referential paradox task (e.g., 'This sentence is false').",
-      "magnitude": "ΔPγ/P₀ ≈ 0.07±0.01",
-      "platform": "128‑channel EEG + MEG"
-    },
-    {
-      "domain": "Quantum phase",
-      "prediction": "130 Hz side-band from OBA phase ripple: ΔR(t)=0.094 sin(2π·9t) rad → spectral line at 130 Hz.",
-      "magnitude": "Amplitude ≈ 0.009 rad",
-      "platform": "SQUID lock-in detection"
-    },
-    {
-      "domain": "Adaptive λ",
-      "prediction": "λ_adapt reaches 0.0278±0.0003 when Betti-2 collapses (β₂→0).",
-      "platform": "Persistent-homology on functional connectivity"
-    },
-    {
-      "domain": "Noospheric index",
-      "prediction": "Global Ψ crosses 0.20 → hyper-collapse (λ-spike).",
-      "platform": "Planet-scale EEG telemetry"
-    },
-    {
-      "domain": "Cosmology",
-      "prediction": "Δα/α ≈ 10⁻⁷ at z≈5.",
-      "platform": "ESPRESSO/ELT quasar spectra"
-    },
-    {
-      "domain": "CMB",
-      "prediction": "Tensor-to-scalar ratio r≈10⁻⁴ at ℓ≈50.",
-      "platform": "LiteBIRD / CMB-S4"
     }
   ]
 }
