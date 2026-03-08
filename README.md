@@ -153,6 +153,7 @@ This guarantees that each of the 48 enhancements uses a **distinct merged equati
 - **Plugin Marketplace** – Browse, rate, and download community plugins (MySQL‑backed).
 - **Dark Wisdom Live Feed** – Real‑time stream of Omega events, extracted wisdom, and paradox alerts.
 - **QNVM Advanced Visualization** – Polar plots of the Wild 9 spiritual ring, emotional resonance waves, and drift vectors.
+- **Blockchain Audit** – (Coming soon) After simulation, you will be able to anchor hashes on Ethereum L2.
 
 ### Output Files (New Additions)
 | File | Contents |
