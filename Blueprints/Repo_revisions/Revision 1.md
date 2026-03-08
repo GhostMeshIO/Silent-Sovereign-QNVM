@@ -1,8 +1,3 @@
-Below is the **complete, updated README.md** for the Silent Sovereign QNVM repository. It integrates all 48 enhancements, the 12 original and 48 Beyond Samsara equations, the MOGOPS framework, and all new features—leaving nothing out.
-
----
-
-```markdown
 # SILENT SOVEREIGN — Stage 5 Civilization Simulator (v2.0 Beyond Samsara)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -345,6 +340,3 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 - The MOGOPS framework is derived from the *MOGOPS_core* axioms and equations.
 
 **Now go forth and explore sovereign ascent beyond samsara!**
-```
-
-This README now includes everything: the 48 enhancements, the equations, MOGOPS integration, new UI features, parameters, output files, API changes, and troubleshooting. Nothing has been left out.
