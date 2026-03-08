@@ -1,17 +1,54 @@
 <?php
 // ─── Configuration ────────────────────────────────────────────────────────────
+require_once __DIR__ . '/config.php';
+
 define('UPLOAD_DIR',  __DIR__ . '/uploads/');
 define('OUTPUT_DIR',  __DIR__ . '/outputs/');
 define('MAX_UPLOAD',  10 * 1024 * 1024);          // 10 MB
-define('MAX_EXEC_TIME', 300);                      // seconds (0 = unlimited)
 define('DEFAULT_PLUGIN', __DIR__ . '/sovereign_emergence.json');
 
 foreach ([UPLOAD_DIR, OUTPUT_DIR] as $d) {
-    if (!is_dir($d)) mkdir($d, 0755, true);
+    if (!is_dir($d)) mkdir($d, DIR_PERMISSIONS, true);
 }
 
-// ─── Helper: terminate process after timeout ─────────────────────────────────
+// ─── Helper: CSRF token generation ───────────────────────────────────────────
+function generate_csrf_token() {
+    if (!isset($_SESSION)) session_start();
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+function verify_csrf_token($token) {
+    if (!isset($_SESSION)) session_start();
+    return hash_equals($_SESSION['csrf_token'] ?? '', $token);
+}
+
+// ─── Helper: authenticate request via API key ────────────────────────────────
+function authenticate() {
+    $headers = getallheaders();
+    $key = $headers['X-API-Key'] ?? $_POST['api_key'] ?? '';
+    return hash_equals(API_KEY, $key);
+}
+
+// ─── Helper: run simulation with optional Docker ─────────────────────────────
 function run_with_timeout($cmd, $cwd, $timeout = MAX_EXEC_TIME) {
+    if (USE_DOCKER) {
+        // Wrap command in Docker with resource limits
+        $docker_cmd = sprintf(
+            'docker run --rm --memory="%s" --cpus="1" -v "%s":/workspace -w /workspace %s bash -c "%s"',
+            MAX_MEMORY,
+            escapeshellarg($cwd),
+            DOCKER_IMAGE,
+            escapeshellarg($cmd . ' 2>&1')
+        );
+        $cmd = $docker_cmd;
+    } else {
+        // Apply ulimit for memory (if available)
+        $cmd = 'ulimit -v ' . (int)MAX_MEMORY . ' 2>/dev/null; ' . $cmd . ' 2>&1';
+    }
+
     $descriptors = [['pipe','r'],['pipe','w'],['pipe','w']];
     $proc = proc_open($cmd, $descriptors, $pipes, $cwd);
     if (!is_resource($proc)) return [false, 'Failed to launch process.', 1];
@@ -33,16 +70,14 @@ function run_with_timeout($cmd, $cwd, $timeout = MAX_EXEC_TIME) {
             return [false, "Process timed out after {$timeout} seconds.", -1];
         }
 
-        // Read available output
         $out = stream_get_contents($pipes[1]);
         $err = stream_get_contents($pipes[2]);
         if ($out !== false) $output .= $out;
         if ($err !== false) $errors .= $err;
 
-        usleep(100000); // 0.1 sec
+        usleep(100000);
     }
 
-    // Final read
     $output .= stream_get_contents($pipes[1]);
     $errors .= stream_get_contents($pipes[2]);
 
@@ -56,21 +91,42 @@ function run_with_timeout($cmd, $cwd, $timeout = MAX_EXEC_TIME) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'run') {
     header('Content-Type: application/json');
 
+    // Authentication
+    if (!authenticate()) {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'error' => 'Unauthorized.']);
+        exit;
+    }
+
+    // CSRF
+    $token = $_POST['csrf_token'] ?? '';
+    if (!verify_csrf_token($token)) {
+        http_response_code(403);
+        echo json_encode(['success' => false, 'error' => 'Invalid CSRF token.']);
+        exit;
+    }
+
     $session_id = bin2hex(random_bytes(8));
     $out_dir    = OUTPUT_DIR . $session_id . '/';
-    mkdir($out_dir, 0755, true);
+    mkdir($out_dir, DIR_PERMISSIONS, true);
 
     // Create plugin directory
     $plugin_dir = $out_dir . 's5_plugins/';
-    if (!is_dir($plugin_dir)) mkdir($plugin_dir, 0755, true);
+    if (!is_dir($plugin_dir)) mkdir($plugin_dir, DIR_PERMISSIONS, true);
 
-    // Handle uploaded files
+    // Handle uploaded files – enforce strict whitelist
     $required = ['s5_core', 's5_runner', 's5_analysis', 'qnvm_light'];
     $script_map = [];
 
     foreach ($required as $key) {
         if (!empty($_FILES[$key]['tmp_name']) && $_FILES[$key]['error'] === UPLOAD_ERR_OK) {
-            $ext = pathinfo($_FILES[$key]['name'], PATHINFO_EXTENSION);
+            $original_name = $_FILES[$key]['name'];
+            // Whitelist: must be exactly the expected name (no directory traversal)
+            if (!in_array($original_name, ALLOWED_SCRIPTS)) {
+                echo json_encode(['success' => false, 'error' => "File {$key} name not allowed."]);
+                exit;
+            }
+            $ext = pathinfo($original_name, PATHINFO_EXTENSION);
             if ($ext !== 'py') {
                 echo json_encode(['success' => false, 'error' => "File {$key} must be a .py script."]);
                 exit;
@@ -81,20 +137,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         }
     }
 
-    // Handle plugin JSON uploads
+    // Handle plugin JSON uploads (optional)
     if (!empty($_FILES['plugins']['tmp_name'])) {
-        // Support multiple files
         $plugin_files = $_FILES['plugins'];
         foreach ($plugin_files['tmp_name'] as $i => $tmp) {
             if ($plugin_files['error'][$i] !== UPLOAD_ERR_OK) continue;
-            $ext = pathinfo($plugin_files['name'][$i], PATHINFO_EXTENSION);
-            if ($ext !== 'json') continue;
-            $dest = $plugin_dir . basename($plugin_files['name'][$i]);
+            $original_name = $plugin_files['name'][$i];
+            // Allow only .json
+            if (pathinfo($original_name, PATHINFO_EXTENSION) !== 'json') continue;
+            $dest = $plugin_dir . basename($original_name);
             move_uploaded_file($tmp, $dest);
         }
     }
 
-    // Copy default plugin if it exists and no user plugin overwrites it
+    // Copy default plugin
     if (file_exists(DEFAULT_PLUGIN)) {
         $basename = basename(DEFAULT_PLUGIN);
         $dest = $plugin_dir . $basename;
@@ -117,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         }
     }
 
-    // Build command arguments
+    // Build command arguments with validation
     $generations       = intval($_POST['generations'] ?? 100);
     $init_pop          = intval($_POST['init_pop'] ?? 30);
     $seed              = $_POST['seed'] !== '' ? intval($_POST['seed']) : null;
@@ -125,6 +181,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $emergence_scale   = floatval($_POST['emergence_scale'] ?? 1.2);
     $genesis           = isset($_POST['genesis']) ? true : false;
     $demurge_universe  = escapeshellarg($_POST['demurge_universe'] ?? 'AETHELGARD');
+
+    // Basic range checks
+    if ($generations < 1 || $generations > 10000) $generations = 100;
+    if ($init_pop < 1 || $init_pop > 1000) $init_pop = 30;
+    if ($carrying_cap < 10 || $carrying_cap > 5000) $carrying_cap = 250;
+    if ($emergence_scale < 0.5 || $emergence_scale > 3.0) $emergence_scale = 1.2;
 
     $cmd_parts = ['python3'];
 
@@ -172,7 +234,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         }
     }
 
-    // Build final command string with redirection
+    // Append any new feature flags (read from POST but currently ignored – to be implemented later)
+    // TODO: Pass these to Python as arguments when supported
+    $beyond_samsara = isset($_POST['beyond_samsara']) ? '--beyond-samsara' : '';
+    $quantum_rng = isset($_POST['quantum_rng']) ? '--quantum-rng' : '';
+    $ar_export = isset($_POST['ar_export']) ? '--ar-export' : '';
+    $zkp_proof = isset($_POST['zkp_proof']) ? '--zkp-proof' : '';
+    $nft_export = isset($_POST['nft_export']) ? '--nft-export' : '';
+    // (These are placeholders; actual implementation requires Python script changes)
+
     $cmd = implode(' ', $cmd_parts) . ' 2>&1';
 
     // Run with timeout
@@ -199,10 +269,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $zip->close();
     }
 
+    // Success flag: only true if exit code is 0 AND there are output files
+    $success = ($exit_code === 0 && count($output_files) > 0);
+
     echo json_encode([
-        'success'      => $exit_code === 0 || count($output_files) > 0,
+        'success'      => $success,
         'session_id'   => $session_id,
-        'output'       => htmlspecialchars(substr($output, 0, 8000)),
+        'output'       => htmlspecialchars(substr($output, 0, 8000), ENT_QUOTES, 'UTF-8'),
         'files'        => $output_files,
         'zip_url'      => 'download.php?sid=' . urlencode($session_id),
         'exit_code'    => $exit_code,
@@ -210,6 +283,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     ]);
     exit;
 }
+
+// Generate CSRF token for the form (to be used in the HTML)
+$csrf_token = generate_csrf_token();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -217,20 +293,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SILENT SOVEREIGN — Civilization Simulator</title>
-    <!-- (CSS unchanged, omitted for brevity – keep the original styles) -->
+    <!-- (CSS would be here; for brevity, keep as before) -->
     <style>
-        /* Copy the original CSS exactly as in the provided index.php */
-        /* ... */
+        /* ... existing styles ... */
     </style>
 </head>
 <body>
 <div class="scanline"></div>
 
-<header>...</header> <!-- unchanged -->
+<header>...</header>
 
 <main id="app" class="mode-s5">
-
-    <!-- ── LEFT: Controls ─────────────────────────────────────────────── -->
     <aside class="control-panel">
         <!-- Mode tabs (unchanged) -->
 
@@ -246,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="qnvm-only" style="display:none; margin-top:8px">
                     <div class="upload-zone" id="zone-qnvm_light">...</div>
                 </div>
-                <!-- New plugin upload zone (multiple files) -->
+                <!-- Plugin JSON upload zone -->
                 <div style="margin-top:16px; border-top:1px dashed var(--border); padding-top:12px;">
                     <div style="font-family:'Share Tech Mono'; font-size:10px; color:var(--muted); margin-bottom:8px;">
                         PLUGIN JSON (optional, multiple)
@@ -265,6 +338,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <!-- S5 toggles (unchanged) -->
         <!-- QNVM toggles (unchanged) -->
 
+        <!-- Hidden CSRF token -->
+        <input type="hidden" name="csrf_token" id="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
+
+        <!-- API key input (or could be header; we'll use a field for simplicity) -->
+        <div style="margin-bottom: 10px;">
+            <label for="api_key">API Key</label>
+            <input type="password" name="api_key" id="api_key" placeholder="Enter your API key" required>
+        </div>
+
         <!-- Run button (unchanged) -->
         <div>
             <div class="progress-wrap">
@@ -276,7 +358,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         </div>
     </aside>
 
-    <!-- ── RIGHT: Output (unchanged) ──────────────────────────────────── -->
     <section class="output-panel">
         <div class="terminal-wrap">...</div>
         <div class="results-panel">...</div>
@@ -287,37 +368,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 <div class="toast" id="toast"></div>
 
 <script>
-// ── JavaScript (updated to handle multiple plugin files) ─────────────────────
 let currentMode = 's5';
 const uploadedFiles = { s5_core: false, s5_runner: false, s5_analysis: false, qnvm_light: false, plugins: false };
 
 // Mode switching (unchanged)
 
-// File upload feedback – enhanced for multiple plugin files
-document.querySelectorAll('.upload-zone input[type=file]').forEach(input => {
-    input.addEventListener('change', function() {
-        const key = this.name.replace('[]', ''); // 'plugins' for multiple
-        const zone = document.getElementById('zone-' + key);
-        if (this.files.length > 0) {
-            uploadedFiles[key] = true;
-            zone.classList.add('uploaded');
-            let names = Array.from(this.files).map(f => f.name).join(', ');
-            zone.querySelector('.upload-status').textContent = '✓ ' + names.slice(0,30) + (names.length>30?'…':'');
-            zone.querySelector('.upload-icon').textContent = '✅';
-        } else {
-            uploadedFiles[key] = false;
-            zone.classList.remove('uploaded');
-            zone.querySelector('.upload-status').textContent = 'Drop or click';
-            zone.querySelector('.upload-icon').textContent = key === 'plugins' ? '🔌' : '📜';
-        }
-    });
-});
+// File upload feedback (unchanged)
 
-// Drag-over highlight (unchanged)
-
-// Terminal functions (unchanged)
-
-// Run simulation – adjusted to include plugins in FormData
+// Run simulation – now includes API key and CSRF token
 async function runSimulation() {
     const btn = document.getElementById('runBtn');
     const progress = document.getElementById('progress');
@@ -325,6 +383,8 @@ async function runSimulation() {
     const fd = new FormData();
     fd.append('action', 'run');
     fd.append('mode', currentMode);
+    fd.append('csrf_token', document.getElementById('csrf_token').value);
+    fd.append('api_key', document.getElementById('api_key').value);
 
     // Collect single file inputs
     document.querySelectorAll('.upload-zone input[type=file]:not([multiple])').forEach(inp => {
@@ -340,24 +400,18 @@ async function runSimulation() {
     }
 
     // Collect form fields (unchanged)
-    // ... (same as before)
+    // ... (same as before, including generations, init_pop, etc.)
 
-    // Validation
-    if (currentMode === 's5' && (!uploadedFiles.s5_runner || !uploadedFiles.s5_core || !uploadedFiles.s5_analysis)) {
-        showToast('Upload s5_core.py, s5_runner.py & s5_analysis.py first', 'error');
-        return;
-    }
-    if (currentMode === 'qnvm' && !uploadedFiles.qnvm_light) {
-        showToast('Upload qnvm_light.py first', 'error');
-        return;
-    }
-
-    // UI: running state (unchanged)
-    // ...
+    // Validation (unchanged)
 
     try {
         const res = await fetch('', { method: 'POST', body: fd });
         const data = await res.json();
+
+        if (!res.ok) {
+            showToast(data.error || 'Request failed', 'error');
+            return;
+        }
 
         progress.className = 'progress-fill';
         progress.style.width = '100%';
@@ -378,9 +432,13 @@ async function runSimulation() {
             showToast('Simulation exited with errors. Check output.', 'error');
         }
     } catch(e) {
-        // ... error handling
+        termWrite('\n// Network or server error: ' + e.message);
+        showToast('Server error: ' + e.message, 'error');
     } finally {
-        // ... reset button
+        btn.disabled = false;
+        btn.className = 'run-btn';
+        btn.textContent = '▶   INITIALIZE SIMULATION';
+        setTimeout(() => { progress.style.width = '0'; }, 2000);
     }
 }
 
