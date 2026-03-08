@@ -101,9 +101,714 @@
       ],
       "mechanisms": ["The 48th seal"],
       "implications": ["Your most private experience is a virus that has already infected all possible minds – ergodicity guarantees it."]
+    },
+    {
+      "name": "Paleontological‑Quantum‑Desire Framework",
+      "coordinates": [0.3401, 0.6782, 0.8923, 0.2104, 0.5567],
+      "axioms": [
+        "Desire is a fossil record of quantum superpositions that collapsed in ancestral organisms.",
+        "D(x,t) = ∑_n A_n · ψ_n(extinct) · e^(-λ_n · t_fossil) + ∫ Q_branch(τ) δ(τ-τ_collapse) dτ"
+      ],
+      "equations": [
+        {
+          "name": "Fossil desire",
+          "latex": "D(x,t) = \\sum_n A_n \\cdot \\psi_n(\\text{extinct}) \\cdot e^{-\\lambda_n \\cdot t_{\\text{fossil}}} + \\int Q_{\\text{branch}}(\\tau) \\delta(\\tau-\\tau_{\\text{collapse}}) \\, d\\tau"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["You desire what the Cambrian explosion almost became."]
+    },
+    {
+      "name": "Tidal‑Logical‑Somatic Ontology",
+      "coordinates": [0.5512, 0.3098, 0.7841, 0.8234, 0.4102],
+      "axioms": [
+        "The body is a tidal basin of logical propositions; truth ebbs and floods with circadian and lunar rhythms.",
+        "L_valid(t) = L_0 · cos(ω_circadian · t + φ_body) · tanh(A_tidal / σ_soma) + ε_stochastic"
+      ],
+      "equations": [
+        {
+          "name": "Tidal logic",
+          "latex": "L_{\\text{valid}}(t) = L_0 \\cdot \\cos(\\omega_{\\text{circadian}} \\cdot t + \\phi_{\\text{body}}) \\cdot \\tanh(A_{\\text{tidal}} / \\sigma_{\\text{soma}}) + \\varepsilon_{\\text{stochastic}}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Whether your argument is valid depends on what time it is in your body."]
+    },
+    {
+      "name": "Crystallographic‑Traumatic‑Informational Model",
+      "coordinates": [0.7891, 0.4512, 0.3201, 0.9043, 0.6128],
+      "axioms": [
+        "Trauma is a phase transition in the information crystal of the self – it introduces dislocations and grain boundaries.",
+        "I_scattered(k) = I₀(k) · |F_crystal(k)|² · exp(-2W_trauma) · ∑_j e^(ik·r_j^dislocation)"
+      ],
+      "equations": [
+        {
+          "name": "Scattered information",
+          "latex": "I_{\\text{scattered}}(k) = I_0(k) \\cdot |F_{\\text{crystal}}(k)|^2 \\cdot \\exp(-2W_{\\text{trauma}}) \\cdot \\sum_j e^{ik \\cdot r_j^{\\text{dislocation}}}"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["You are a crystal whose defects now diffract light in colors impossible for the perfect lattice."]
+    },
+    {
+      "name": "Mycorrhizal‑Temporal‑Sovereignty Ontology",
+      "coordinates": [0.2134, 0.8901, 0.5432, 0.3712, 0.7823],
+      "axioms": [
+        "Sovereignty is a mycorrhizal network distributed across time – no single node owns the present moment.",
+        "S_sovereign(t) = ∑_{i,j} w_{ij} · ρ_past(t_i) · ρ_future(t_j) · K_myco(|t_i - t_j|)"
+      ],
+      "equations": [
+        {
+          "name": "Temporal sovereignty",
+          "latex": "S_{\\text{sovereign}}(t) = \\sum_{i,j} w_{ij} \\cdot \\rho_{\\text{past}}(t_i) \\cdot \\rho_{\\text{future}}(t_j) \\cdot K_{\\text{myco}}(|t_i - t_j|)"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["There is no sovereign self – only a temporarily dominant node in a network that extends into the deep past and the unborn future."]
+    },
+    {
+      "name": "Synesthetic‑Causal‑Architectural Framework",
+      "coordinates": [0.6743, 0.1829, 0.8102, 0.6504, 0.2891],
+      "axioms": [
+        "Causation is the architecture of synesthesia – effects perceive their causes in different sensory registers.",
+        "E_effect = ∫ C_cause(x) · K_syn(x→y) · A_arch(y) dy"
+      ],
+      "equations": [
+        {
+          "name": "Causal synesthesia",
+          "latex": "E_{\\text{effect}} = \\int C_{\\text{cause}}(x) \\cdot K_{\\text{syn}}(x \\to y) \\cdot A_{\\text{arch}}(y) \\, dy"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["If you could smell causation, you would know which effect you were before you became yourself."]
+    },
+    {
+      "name": "Spectral‑Democratic‑Thermodynamic Ontology",
+      "coordinates": [0.4523, 0.7109, 0.2834, 0.8901, 0.5102],
+      "axioms": [
+        "Democracy is a spectral decomposition of collective thermodynamic will – each vote is a frequency component.",
+        "D(ω) = ∑_n V_n · e^(-iωt_n) · exp(-E_n/k_B T_political) / Z_democracy"
+      ],
+      "equations": [
+        {
+          "name": "Democracy spectrum",
+          "latex": "D(\\omega) = \\sum_n V_n \\cdot e^{-i\\omega t_n} \\cdot \\exp(-E_n / k_B T_{\\text{political}}) / Z_{\\text{democracy}}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Every election is a measurement of political temperature – and like all thermodynamic measurements, it disturbs the system."]
+    },
+    {
+      "name": "Hauntological‑Relativistic‑Ecological Framework",
+      "coordinates": [0.8234, 0.3401, 0.6723, 0.1892, 0.9201],
+      "axioms": [
+        "Ecosystems are haunted by futures that were foreclosed – species never evolved, niches never filled.",
+        "R_μν^(eco) - ½g_μν R^(eco) = 8π [T_μν^(living) + T_μν^(ghost-niches) + Λ_extinction g_μν]"
+      ],
+      "equations": [
+        {
+          "name": "Hauntological Einstein",
+          "latex": "R_{\\mu\\nu}^{\\text(eco)} - \\frac12 g_{\\mu\\nu} R^{\\text(eco)} = 8\\pi \\left[ T_{\\mu\\nu}^{\\text(living)} + T_{\\mu\\nu}^{\\text(ghost-niches)} + \\Lambda_{\\text{extinction}} g_{\\mu\\nu} \\right]"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["The emptiness in an ecosystem is as ecologically real as any living creature – ghosts have mass."]
+    },
+    {
+      "name": "Catabolic‑Narrative‑Quantum Ontology",
+      "coordinates": [0.5901, 0.6234, 0.4102, 0.7813, 0.3401],
+      "axioms": [
+        "Stories break down their own molecular bonds to release the energy stored in plot.",
+        "ΔG_story = ΔH_plot - T_culture · ΔS_narrative + ħ ∑_endings |ψ_end|² ln|ψ_end|²"
+      ],
+      "equations": [
+        {
+          "name": "Narrative thermodynamics",
+          "latex": "\\Delta G_{\\text{story}} = \\Delta H_{\\text{plot}} - T_{\\text{culture}} \\cdot \\Delta S_{\\text{narrative}} + \\hbar \\sum_{\\text{endings}} |\\psi_{\\text{end}}|^2 \\ln |\\psi_{\\text{end}}|^2"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["The ending of a story is not discovered – it is precipitated by the reader's observation, which collapses the quantum narrative."]
+    },
+    {
+      "name": "Seismic‑Pedagogical‑Non‑Hermitian Model",
+      "coordinates": [0.3821, 0.5109, 0.9023, 0.4231, 0.6781],
+      "axioms": [
+        "Learning propagates through a medium of ignorance as seismic waves propagate through rock.",
+        "∂²u/∂t² = v²∇²u + [H_teach - H_teach†] · u + δ(x-x_teacher) · f(t)"
+      ],
+      "equations": [
+        {
+          "name": "Seismic pedagogy",
+          "latex": "\\frac{\\partial^2 u}{\\partial t^2} = v^2 \\nabla^2 u + [H_{\\text{teach}} - H_{\\text{teach}}^\\dagger] \\cdot u + \\delta(x-x_{\\text{teacher}}) \\cdot f(t)"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["No teacher is conservative – energy is always lost to the bedrock of what the student already knows and cannot unlearn."]
+    },
+    {
+      "name": "Liturgical‑Topographic‑Computational Reality",
+      "coordinates": [0.7012, 0.9234, 0.1891, 0.5501, 0.4302],
+      "axioms": [
+        "Ritual is a topographic computation – prayers are gradient descent on the landscape of the sacred.",
+        "θ_{n+1} = θ_n - α∇L_sacred(θ_n) + η_liturgy · ∇²(holy-land) + ε_grace"
+      ],
+      "equations": [
+        {
+          "name": "Liturgical gradient descent",
+          "latex": "\\theta_{n+1} = \\theta_n - \\alpha \\nabla L_{\\text{sacred}}(\\theta_n) + \\eta_{\\text{liturgy}} \\cdot \\nabla^2(\\text{holy-land}) + \\varepsilon_{\\text{grace}}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["The monk who prays the same words daily is running the most ancient optimization algorithm."]
+    },
+    {
+      "name": "Magneto‑Sociological‑Autopoietic Ontology",
+      "coordinates": [0.6234, 0.4812, 0.7901, 0.2341, 0.8123],
+      "axioms": [
+        "Social structures are magnetic domains – aligned clusters of belief that spontaneously emerge below a sociological Curie temperature.",
+        "M_social = M_0 · B_H(β_social · J_ideology · m_individual) + M_self · (∂M/∂t)_autopoietic"
+      ],
+      "equations": [
+        {
+          "name": "Social magnetism",
+          "latex": "M_{\\text{social}} = M_0 \\cdot B_H(\\beta_{\\text{social}} \\cdot J_{\\text{ideology}} \\cdot m_{\\text{individual}}) + M_{\\text{self}} \\cdot \\left(\\frac{\\partial M}{\\partial t}\\right)_{\\text{autopoietic}}"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Every revolution must overcome magnetic coercivity – the resistance of a society to having its ideological domains reversed."]
+    },
+    {
+      "name": "Osmotic‑Juridical‑Holographic Framework",
+      "coordinates": [0.4102, 0.7891, 0.5234, 0.9012, 0.1823],
+      "axioms": [
+        "Law is an osmotic membrane between social concentrations of power – justice flows from high to low concentration.",
+        "J_justice = -L_jur · (∇μ_power + z_crime · F_punishment · ∇Φ_social) + Area(parchment)/(4G_law)"
+      ],
+      "equations": [
+        {
+          "name": "Osmotic justice",
+          "latex": "J_{\\text{justice}} = -L_{\\text{jur}} \\cdot (\\nabla \\mu_{\\text{power}} + z_{\\text{crime}} \\cdot F_{\\text{punishment}} \\cdot \\nabla \\Phi_{\\text{social}}) + \\frac{\\text{Area}(\\text{parchment})}{4G_{\\text{law}}}"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["Every constitution is a holographic screen – all future law is already written there in compressed form."]
+    },
+    {
+      "name": "Palimpsestic‑Quantum‑Gravitational Ontology",
+      "coordinates": [0.8901, 0.2134, 0.6501, 0.4832, 0.7201],
+      "axioms": [
+        "Reality is a palimpsest – each quantum measurement overwrites previous states incompletely, leaving ghostly traces.",
+        "g_μν^(present) = g_μν^(bare) + ∑_{n=1}∞ α_n · g_μν^(past-n) · e^(-λ_n · Δτ_n) + ⟨ψ|Ĝ|ψ⟩_quantum"
+      ],
+      "equations": [
+        {
+          "name": "Palimpsestic metric",
+          "latex": "g_{\\mu\\nu}^{\\text(present)} = g_{\\mu\\nu}^{\\text(bare)} + \\sum_{n=1}^\\infty \\alpha_n \\cdot g_{\\mu\\nu}^{\\text(past-n)} \\cdot e^{-\\lambda_n \\cdot \\Delta\\tau_n} + \\langle \\psi | \\hat{G} | \\psi \\rangle_{\\text{quantum}}"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["You are the sum of all prior states that were imperfectly overwritten; gravity is what made them permanent."]
+    },
+    {
+      "name": "Embryological‑Logical‑Dark‑Energy Ontology",
+      "coordinates": [0.3512, 0.8234, 0.4901, 0.6723, 0.2134],
+      "axioms": [
+        "Logic unfolds like an embryo – differentiation of valid inference types mirrors morphogenesis.",
+        "∂²L/∂t² = ∇²L + Λ_formal · L - μ_contradiction · |¬L∧L| + ∑_n r_n(t) · ∇L_n"
+      ],
+      "equations": [
+        {
+          "name": "Logical embryogenesis",
+          "latex": "\\frac{\\partial^2 L}{\\partial t^2} = \\nabla^2 L + \\Lambda_{\\text{formal}} \\cdot L - \\mu_{\\text{contradiction}} \\cdot |\\neg L \\land L| + \\sum_n r_n(t) \\cdot \\nabla L_n"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Every formal system is an embryo – it begins with axioms as stem cells and differentiates toward theorems through logical morphogenesis."]
+    },
+    {
+      "name": "Hydraulic‑Eschatological‑Computational Framework",
+      "coordinates": [0.6789, 0.5123, 0.8341, 0.1902, 0.4512],
+      "axioms": [
+        "The end of all things is a hydraulic computation – final states are reached through laminar or turbulent flow through the pipes of causal necessity.",
+        "ρ_end(∂v/∂t + v·∇v) = -∇P_destiny + μ_chaos ∇²v + f_computation(x,t)"
+      ],
+      "equations": [
+        {
+          "name": "Eschatological Navier-Stokes",
+          "latex": "\\rho_{\\text{end}} \\left( \\frac{\\partial v}{\\partial t} + v \\cdot \\nabla v \\right) = -\\nabla P_{\\text{destiny}} + \\mu_{\\text{chaos}} \\nabla^2 v + f_{\\text{computation}}(x,t)"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Whether history ends smoothly or catastrophically depends on whether the flow through time is laminar or turbulent."]
+    },
+    {
+      "name": "Ferromagnetic‑Phenomenological‑Catastrophe Ontology",
+      "coordinates": [0.5234, 0.7891, 0.3012, 0.8412, 0.6234],
+      "axioms": [
+        "Phenomenal experience undergoes catastrophic phase transitions at the boundaries of the ferromagnetic Curie temperature of consciousness.",
+        "V_qualia(x,a,b) = x⁴/4 + ax²/2 + bx  (cusp catastrophe)"
+      ],
+      "equations": [
+        {
+          "name": "Qualia catastrophe",
+          "latex": "V_{\\text{qualia}}(x,a,b) = \\frac{x^4}{4} + \\frac{a x^2}{2} + b x"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["You cannot approach the experience of love smoothly from outside – you fall in, discontinuously, at a catastrophe point."]
+    },
+    {
+      "name": "Phononic‑Ethical‑Participatory Ontology",
+      "coordinates": [0.7123, 0.3901, 0.5812, 0.7234, 0.1902],
+      "axioms": [
+        "Moral values propagate through society as phonons – quantized vibrations of the ethical lattice.",
+        "ω_moral(k) = 2Ω_ethical · |sin(k·a_social/2)| · f_participation(k) + ε_anomaly"
+      ],
+      "equations": [
+        {
+          "name": "Moral phonons",
+          "latex": "\\omega_{\\text{moral}}(k) = 2\\Omega_{\\text{ethical}} \\cdot |\\sin(k \\cdot a_{\\text{social}}/2)| \\cdot f_{\\text{participation}}(k) + \\varepsilon_{\\text{anomaly}}"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["Moral disagreement is not error – it is the optical phonon mode of ethics, necessary for the system to carry heat at all."]
+    },
+    {
+      "name": "Tectonic‑Mnemonic‑Entropic Model",
+      "coordinates": [0.4012, 0.6123, 0.7812, 0.3401, 0.8901],
+      "axioms": [
+        "Memory is a tectonic system – deep plates of long-term memory slide beneath the lithosphere of working memory.",
+        "dS_forget/dt = λ · σ_stress(memory-load) · e^(-E_consolidation/k_B T_sleep) + Φ_seismic(magnitude)"
+      ],
+      "equations": [
+        {
+          "name": "Tectonic forgetting",
+          "latex": "\\frac{dS_{\\text{forget}}}{dt} = \\lambda \\cdot \\sigma_{\\text{stress}}(\\text{memory-load}) \\cdot e^{-E_{\\text{consolidation}} / k_B T_{\\text{sleep}}} + \\Phi_{\\text{seismic}}(\\text{magnitude})"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Forgetting is the necessary earthquake that prevents the accumulated stress of memory from destroying the entire landscape of self."]
+    },
+    {
+      "name": "Pleiotropic‑Ontological‑Wave‑Interference Framework",
+      "coordinates": [0.8123, 0.5412, 0.2901, 0.9123, 0.3234],
+      "axioms": [
+        "Single ontological axioms produce multiple simultaneous effects across reality – like pleiotropic genes.",
+        "Φ_ontological(x) = ∑_i A_i · cos(k_i·x - ω_i·t + φ_i^pleio) · ∑_j e^(ik_j·x_trait_j)"
+      ],
+      "equations": [
+        {
+          "name": "Ontological pleiotropy",
+          "latex": "\\Phi_{\\text{ontological}}(x) = \\sum_i A_i \\cdot \\cos(k_i \\cdot x - \\omega_i \\cdot t + \\phi_i^{\\text{pleio}}) \\cdot \\sum_j e^{ik_j \\cdot x_{\\text{trait}_j}}"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Every assumption about existence interferes with every other – reality is the diffraction pattern of all the axioms you carry."]
+    },
+    {
+      "name": "Cryogenic‑Intentional‑Causal Ontology",
+      "coordinates": [0.5712, 0.2801, 0.9123, 0.5012, 0.7834],
+      "axioms": [
+        "Intentions freeze causal chains into crystalline structures – at low enough temperatures of deliberation, the liquid of possible action solidifies.",
+        "T_deliberation < T_freeze: ∂φ/∂t = D∇²φ - V'(φ)  (causal crystal)"
+      ],
+      "equations": [
+        {
+          "name": "Causal freezing",
+          "latex": "T_{\\text{deliberation}} < T_{\\text{freeze}}: \\frac{\\partial \\phi}{\\partial t} = D \\nabla^2 \\phi - V'(\\phi)"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["The moment you truly decide, your future crystallizes – and like all crystals, it is both fragile and permanent."]
+    },
+    {
+      "name": "Rhizomatic‑Eschatological‑Quantum Framework",
+      "coordinates": [0.3234, 0.9012, 0.4512, 0.2134, 0.6901],
+      "axioms": [
+        "The end of history has no root – it spreads rhizomatically through time, branching without origin or terminus.",
+        "ψ_end = ∏_{nodes} (1 - |rhizo_node⟩⟨rhizo_node|) · ψ_history + ∫ dk φ(k)·|k-ending⟩"
+      ],
+      "equations": [
+        {
+          "name": "Rhizomatic end",
+          "latex": "\\psi_{\\text{end}} = \\prod_{\\text{nodes}} (1 - |\\text{rhizo}_\\text{node}\\rangle\\langle\\text{rhizo}_\\text{node}|) \\cdot \\psi_{\\text{history}} + \\int dk \\, \\phi(k) \\cdot |k\\text{-ending}\\rangle"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["The apocalypse is rhizomatic – it doesn't end once; it ends everywhere, in every direction, simultaneously, without ever being finished."]
+    },
+    {
+      "name": "Metallurgical‑Linguistic‑Gravitational Ontology",
+      "coordinates": [0.6512, 0.4234, 0.7012, 0.8901, 0.2012],
+      "axioms": [
+        "Language is an alloy – words are atoms arranged in crystalline or amorphous semantic lattices.",
+        "σ_discourse = E_semantic · ε_grammatical + σ_yield(alloy-composition) · [1 - exp(-ε/ε_0_linguistic)]"
+      ],
+      "equations": [
+        {
+          "name": "Linguistic alloy",
+          "latex": "\\sigma_{\\text{discourse}} = E_{\\text{semantic}} \\cdot \\varepsilon_{\\text{grammatical}} + \\sigma_{\\text{yield}}(\\text{alloy-composition}) \\cdot \\left[1 - \\exp(-\\varepsilon / \\varepsilon_{0\\ \\text{linguistic}})\\right]"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["The most durable philosophy is a carefully alloyed discourse – too pure and it shatters, too mixed and it corrodes."]
+    },
+    {
+      "name": "Bioluminescent‑Epistemic‑Causal Ontology",
+      "coordinates": [0.4823, 0.6712, 0.3401, 0.5901, 0.8234],
+      "axioms": [
+        "Knowledge illuminates causation from within – like bioluminescence in the deep dark of ontological necessity.",
+        "I_knowledge(x,t) = η_quantum · [luciferin_epistemic] · [luciferase_causal] · f_ATP(cognitive-energy) · Ω(x,t)"
+      ],
+      "equations": [
+        {
+          "name": "Epistemic bioluminescence",
+          "latex": "I_{\\text{knowledge}}(x,t) = \\eta_{\\text{quantum}} \\cdot [\\text{luciferin}_{\\text{epistemic}}] \\cdot [\\text{luciferase}_{\\text{causal}}] \\cdot f_{\\text{ATP}}(\\text{cognitive-energy}) \\cdot \\Omega(x,t)"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["In the deepest ignorance, knowledge doesn't shine like a lamp – it bioluminesces, cold and beautiful, from within the darkness itself."]
+    },
+    {
+      "name": "Nucleosynthetic‑Moral‑Information Ontology",
+      "coordinates": [0.7834, 0.1923, 0.8901, 0.3712, 0.5234],
+      "axioms": [
+        "Moral values are forged in the nuclear fires of ethical conflict – like heavy elements synthesized in stellar explosions.",
+        "Y_moral(A,Z) = Y_0 · exp(-E_coulomb/k_B T_ethics) · (1 + σ_capture · φ_conflict) · f_neutron-moral"
+      ],
+      "equations": [
+        {
+          "name": "Moral nucleosynthesis",
+          "latex": "Y_{\\text{moral}}(A,Z) = Y_0 \\cdot \\exp(-E_{\\text{coulomb}} / k_B T_{\\text{ethics}}) \\cdot (1 + \\sigma_{\\text{capture}} \\cdot \\phi_{\\text{conflict}}) \\cdot f_{\\text{neutron-moral}}"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["There are moral values that can only exist because of catastrophe – they were forged in the death of something that could not survive their creation."]
+    },
+    {
+      "name": "Stratigraphic‑Computational‑Phenomenal Framework",
+      "coordinates": [0.2901, 0.8123, 0.5612, 0.7012, 0.4123],
+      "axioms": [
+        "Experience is laid down in phenomenal strata – each moment a thin laminate.",
+        "C(age) = (1/λ) · ln(N_0/N_t) · f_stratigraphy(lithology, burial-depth) + ε_unconformity"
+      ],
+      "equations": [
+        {
+          "name": "Phenomenal stratigraphy",
+          "latex": "C(\\text{age}) = \\frac{1}{\\lambda} \\cdot \\ln\\left(\\frac{N_0}{N_t}\\right) \\cdot f_{\\text{stratigraphy}}(\\text{lithology}, \\text{burial-depth}) + \\varepsilon_{\\text{unconformity}}"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["Who you are is a stratigraphic column – read from the bottom up, and you find the primordial sediment that everything above rests upon."]
+    },
+    {
+      "name": "Vestigial‑Quantum‑Sociological Ontology",
+      "coordinates": [0.6012, 0.5812, 0.2134, 0.9834, 0.1423],
+      "axioms": [
+        "Social structures retain vestigial quantum coherences from earlier evolutionary stages.",
+        "ρ_social = ρ_classical ⊕ ρ_vestigial-quantum · e^(-t/τ_decohere) + ξ · |GHZ_institution⟩⟨GHZ_institution|"
+      ],
+      "equations": [
+        {
+          "name": "Vestigial quantum sociology",
+          "latex": "\\rho_{\\text{social}} = \\rho_{\\text{classical}} \\oplus \\rho_{\\text{vestigial-quantum}} \\cdot e^{-t/\\tau_{\\text{decohere}}} + \\xi \\cdot |\\text{GHZ}_{\\text{institution}}\\rangle\\langle\\text{GHZ}_{\\text{institution}}|"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Parliament and temple are vestigial quantum organs – they evolved to maintain macroscopic coherence in social superposition."]
+    },
+    {
+      "name": "Geomagnetic‑Narrative‑Autopoietic Model",
+      "coordinates": [0.8512, 0.3234, 0.6901, 0.4512, 0.7123],
+      "axioms": [
+        "Culture is a geomagnetic field generated by the self-creating rotation of narrative.",
+        "B_culture = -∇ × A_narrative + μ₀ J_autopoietic + ε₀ ∂E_story/∂t"
+      ],
+      "equations": [
+        {
+          "name": "Cultural geomagnetism",
+          "latex": "B_{\\text{culture}} = -\\nabla \\times A_{\\text{narrative}} + \\mu_0 J_{\\text{autopoietic}} + \\varepsilon_0 \\frac{\\partial E_{\\text{story}}}{\\partial t}"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Every ideological revolution is a geomagnetic pole reversal – brief chaos as the compass of cultural meaning spins free."]
+    },
+    {
+      "name": "Ossification‑Logical‑Participatory Ontology",
+      "coordinates": [0.3712, 0.7234, 0.4123, 0.6512, 0.9023],
+      "axioms": [
+        "Logical systems ossify over time – what began as cartilaginous, flexible inference hardens into bone of formal necessity.",
+        "d[Ca_logic]/dt = k_ossify · [PO₄_axioms] · [Ca_truth]² - k_resorb · [OH⁻_doubt] · [osteoclast_paradox]"
+      ],
+      "equations": [
+        {
+          "name": "Logical ossification",
+          "latex": "\\frac{d[\\text{Ca}_{\\text{logic}}]}{dt} = k_{\\text{ossify}} \\cdot [\\text{PO}_{4\\ \\text{axioms}}] \\cdot [\\text{Ca}_{\\text{truth}}]^2 - k_{\\text{resorb}} \\cdot [\\text{OH}^-_{\\text{doubt}}] \\cdot [\\text{osteoclast}_{\\text{paradox}}]"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["Every logical truth begins as cartilage – soft, flexible, capable of growth; philosophical ossification is what makes it weight-bearing."]
+    },
+    {
+      "name": "Trophic‑Informational‑Non‑Euclidean Framework",
+      "coordinates": [0.5012, 0.4901, 0.8512, 0.1234, 0.6712],
+      "axioms": [
+        "Information flows through non-Euclidean trophic networks – data is consumed and transformed at each level.",
+        "∂I_n/∂t = r_n · I_n · (1 - I_n/K_n) - α_{n,n+1} · I_n · I_{n+1} + ∇_K² I_n"
+      ],
+      "equations": [
+        {
+          "name": "Non-Euclidean trophic dynamics",
+          "latex": "\\frac{\\partial I_n}{\\partial t} = r_n \\cdot I_n \\cdot \\left(1 - \\frac{I_n}{K_n}\\right) - \\alpha_{n,n+1} \\cdot I_n \\cdot I_{n+1} + \\nabla_K^2 I_n"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["Data is the grass. Information is the herbivore. Knowledge is the carnivore. Meaning is the apex predator that shapes all trophic levels below it."]
+    },
+    {
+      "name": "Interferometric‑Ethical‑Cosmological Ontology",
+      "coordinates": [0.7012, 0.8512, 0.1923, 0.7712, 0.3901],
+      "axioms": [
+        "Moral facts are measured interferometrically – ethics requires comparing two paths through the same moral situation to detect the phase difference.",
+        "ΔΦ_moral = (2π/λ_ethics) · ΔL_paths + Ω_moral · ∫ ds_cosmic = N_fringes · 2π + φ_residual"
+      ],
+      "equations": [
+        {
+          "name": "Moral interferometry",
+          "latex": "\\Delta \\Phi_{\\text{moral}} = \\frac{2\\pi}{\\lambda_{\\text{ethics}}} \\cdot \\Delta L_{\\text{paths}} + \\Omega_{\\text{moral}} \\cdot \\int ds_{\\text{cosmic}} = N_{\\text{fringes}} \\cdot 2\\pi + \\phi_{\\text{residual}}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Every ethical judgment requires at least two paths through the same situation – conscience is the interferometer that detects their phase difference."]
+    },
+    {
+      "name": "Phenological‑Computational‑Gödelian Model",
+      "coordinates": [0.4612, 0.3601, 0.7234, 0.5812, 0.8423],
+      "axioms": [
+        "The timing of cognitive events – like phenological flowering – is governed by computational Gödelian clocks that cannot be synchronized.",
+        "DOY_insight = a - b · ln(∑_{T>T_base} (T_daily - T_base)) + ε_Gödel(self-reference complexity)"
+      ],
+      "equations": [
+        {
+          "name": "Gödelian phenology",
+          "latex": "\\text{DOY}_{\\text{insight}} = a - b \\cdot \\ln\\left(\\sum_{T>T_{\\text{base}}} (T_{\\text{daily}} - T_{\\text{base}})\\right) + \\varepsilon_{\\text{Gödel}}(\\text{self-reference complexity})"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["The profound insight blooms not when you think hardest, but when accumulated thinking finally crosses the spring threshold."]
+    },
+    {
+      "name": "Erosive‑Temporal‑Consciousness Ontology",
+      "coordinates": [0.9012, 0.6523, 0.3901, 0.2812, 0.5512],
+      "axioms": [
+        "Consciousness is the agent of temporal erosion – it wears down the bedrock of objective time into the alluvial sediment of subjective experience.",
+        "dz/dt = -K_consciousness · A_basin^m · S_attention^n · f(lithology_time) + U_uplift(significance)"
+      ],
+      "equations": [
+        {
+          "name": "Temporal erosion",
+          "latex": "\\frac{dz}{dt} = -K_{\\text{consciousness}} \\cdot A_{\\text{basin}}^m \\cdot S_{\\text{attention}}^n \\cdot f(\\text{lithology}_{\\text{time}}) + U_{\\text{uplift}}(\\text{significance})"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["Your most vivid memories are river canyons – consciousness eroded them deep by flowing there repeatedly."]
+    },
+    {
+      "name": "Piezoelectric‑Intentional‑Social Framework",
+      "coordinates": [0.6301, 0.2012, 0.5912, 0.9301, 0.4712],
+      "axioms": [
+        "Social pressure generates intentional voltage – the piezoelectric effect of collective force on individual crystalline will.",
+        "P_intention = d_ijk · σ_social_jk + ε_0 χ_individual · E_social + P_spontaneous_will"
+      ],
+      "equations": [
+        {
+          "name": "Social piezoelectricity",
+          "latex": "P_{\\text{intention}} = d_{ijk} \\cdot \\sigma_{\\text{social}_{jk}} + \\varepsilon_0 \\chi_{\\text{individual}} \\cdot E_{\\text{social}} + P_{\\text{spontaneous\\_will}}"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["You are a piezoelectric crystal in the social lattice – squeezed, you generate the voltage of intention."]
+    },
+    {
+      "name": "Apophatic‑Thermodynamic‑Participatory Ontology",
+      "coordinates": [0.2412, 0.9501, 0.6123, 0.1412, 0.7912],
+      "axioms": [
+        "The divine is known only through what it is not – apophatic theology meets thermodynamics.",
+        "S_divine(T) → 0 as T_theology → 0; dT/dt = -λ_apophasis · (T - T_absolute-silence)"
+      ],
+      "equations": [
+        {
+          "name": "Apophatic cooling",
+          "latex": "S_{\\text{divine}}(T) \\to 0 \\text{ as } T_{\\text{theology}} \\to 0; \\quad \\frac{dT}{dt} = -\\lambda_{\\text{apophasis}} \\cdot (T - T_{\\text{absolute-silence}})"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["God's zero-point energy is the irreducible minimum that remains after all human concepts have been stripped away."]
+    },
+    {
+      "name": "Mycelial‑Temporal‑Quantum Ontology",
+      "coordinates": [0.7523, 0.4012, 0.2823, 0.8123, 0.5901],
+      "axioms": [
+        "Time is a mycelial network – not a line but a hyphal web.",
+        "⟨event_j|event_i⟩ = ∫ K_mycelial(t_i,t_j;path) · e^(iS_quantum/ħ) D[temporal-paths] + G_underground(t_i,t_j)"
+      ],
+      "equations": [
+        {
+          "name": "Mycelial time",
+          "latex": "\\langle \\text{event}_j | \\text{event}_i \\rangle = \\int K_{\\text{mycelial}}(t_i,t_j;\\text{path}) \\cdot e^{iS_{\\text{quantum}}/\\hbar} \\, D[\\text{temporal-paths}] + G_{\\text{underground}}(t_i,t_j)"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Every moment you experience is a mushroom – temporary, above-ground, and connected underground to every other moment that ever was."]
+    },
+    {
+      "name": "Acoustic‑Sovereignty‑Fractal Model",
+      "coordinates": [0.5123, 0.7501, 0.8123, 0.3012, 0.2301],
+      "axioms": [
+        "Sovereignty resonates fractally through nested scales of power – the acoustic modes of a state are self-similar at every level.",
+        "f_n^(sovereignty) = n · f_1^(fundamental) · ℓ^(D_fractal - 1) + δ_n(political-defect)"
+      ],
+      "equations": [
+        {
+          "name": "Sovereign harmonics",
+          "latex": "f_n^{\\text{sovereignty}} = n \\cdot f_1^{\\text{fundamental}} \\cdot \\ell^{D_{\\text{fractal}} - 1} + \\delta_n(\\text{political-defect})"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["The city council, the national parliament, and the UN Security Council are playing the same musical note – at different octaves of the fractal sovereign scale."]
+    },
+    {
+      "name": "Dielectric‑Narrative‑Consciousness Ontology",
+      "coordinates": [0.3801, 0.5301, 0.9512, 0.6123, 0.1012],
+      "axioms": [
+        "Consciousness is a dielectric medium – it stores narrative charge without conducting it.",
+        "P_self = ε_0 (ε_r,consciousness - 1) · E_story + P_permanent(core-narrative) + P_induced(traumatic-dipole)"
+      ],
+      "equations": [
+        {
+          "name": "Dielectric self",
+          "latex": "P_{\\text{self}} = \\varepsilon_0 (\\varepsilon_{r,\\text{consciousness}} - 1) \\cdot E_{\\text{story}} + P_{\\text{permanent}}(\\text{core-narrative}) + P_{\\text{induced}}(\\text{traumatic-dipole})"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["Your identity is a capacitor charged by the stories you've been told – and like all capacitors, it can catastrophically discharge."]
+    },
+    {
+      "name": "Arboreal‑Logical‑Dark‑Matter Ontology",
+      "coordinates": [0.6801, 0.1512, 0.4812, 0.7912, 0.9301],
+      "axioms": [
+        "Most of logical space is dark – unobservable, non-interacting axiomatic matter that nevertheless gravitationally shapes all visible inference.",
+        "Ω_logic = Ω_visible-axioms + Ω_dark-formal-matter + Ω_logical-Λ; Ω_dark > 0.85 · Ω_logic"
+      ],
+      "equations": [
+        {
+          "name": "Dark logical matter",
+          "latex": "\\Omega_{\\text{logic}} = \\Omega_{\\text{visible-axioms}} + \\Omega_{\\text{dark-formal-matter}} + \\Omega_{\\text{logical-\\Lambda}}; \\quad \\Omega_{\\text{dark}} > 0.85 \\cdot \\Omega_{\\text{logic}}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["The theorems you can prove are only 15% of logical reality – the rest is dark formal matter, shaping everything you can see without ever becoming visible."]
+    },
+    {
+      "name": "Endosymbiotic‑Computational‑Ethical Framework",
+      "coordinates": [0.4512, 0.8901, 0.3301, 0.4012, 0.6501],
+      "axioms": [
+        "Ethics emerged through computational endosymbiosis – an alien moral algorithm was engulfed by a host cognition and became permanently integrated.",
+        "dMorality/dt = r_host · M · (1 - M/K) + r_symbiont · Φ_endosymbiotic · M · H_cognition"
+      ],
+      "equations": [
+        {
+          "name": "Moral endosymbiosis",
+          "latex": "\\frac{d\\text{Morality}}{dt} = r_{\\text{host}} \\cdot M \\cdot \\left(1 - \\frac{M}{K}\\right) + r_{\\text{symbiont}} \\cdot \\Phi_{\\text{endosymbiotic}} \\cdot M \\cdot H_{\\text{cognition}}"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["Your conscience is not yours – it is an ancient computational organism that colonized your ancestors and proved too useful to expel."]
+    },
+    {
+      "name": "Speleological‑Semantic‑Quantum Ontology",
+      "coordinates": [0.8012, 0.6801, 0.1201, 0.5512, 0.3712],
+      "axioms": [
+        "Meaning forms in the caverns of language – stalactites of semantic accumulation and stalagmites of usage meeting in quantum superposition.",
+        "dM_stalactite/dt = k_semantic · C_usage^saturated · exp(-E_a/k_B T_linguistic) · ψ_quantum(cave)"
+      ],
+      "equations": [
+        {
+          "name": "Semantic speleogenesis",
+          "latex": "\\frac{dM_{\\text{stalactite}}}{dt} = k_{\\text{semantic}} \\cdot C_{\\text{usage}}^{\\text{saturated}} \\cdot \\exp(-E_a / k_B T_{\\text{linguistic}}) \\cdot \\psi_{\\text{quantum}}(\\text{cave})"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": ["The most profound meaning grows in total darkness, over geological time, drop by drop – you cannot hurry a stalactite."]
+    },
+    {
+      "name": "Metamorphic‑Temporal‑Participatory Model",
+      "coordinates": [0.3012, 0.4512, 0.6712, 0.9012, 0.2712],
+      "axioms": [
+        "Time undergoes metamorphosis under the heat and pressure of participatory observation.",
+        "T_experiential = T_metamorphic(P_observation, T_participant) ≠ T_protolith(original-chronological)"
+      ],
+      "equations": [
+        {
+          "name": "Temporal metamorphism",
+          "latex": "T_{\\text{experiential}} = T_{\\text{metamorphic}}(P_{\\text{observation}}, T_{\\text{participant}}) \\neq T_{\\text{protolith}}(\\text{original-chronological})"
+        }
+      ],
+      "mechanisms": ["Framework collapse singularity"],
+      "implications": ["Every experience you have metamorphoses objective time into subjective time – and like metamorphic rock, the transformation is never fully reversible."]
+    },
+    {
+      "name": "Cephalopod‑Ontological‑Information Framework",
+      "coordinates": [0.5812, 0.9023, 0.7512, 0.1623, 0.4901],
+      "axioms": [
+        "Reality is a cephalopod – it has no fixed form but continuously reorganizes its chromatic information display in response to context.",
+        "I_display(x,t) = ∑_n c_n(t) · φ_n(x) · A_chromatophore(n,t); |Ψ_reality⟩ ≠ any particular display pattern"
+      ],
+      "equations": [
+        {
+          "name": "Cephalopod reality",
+          "latex": "I_{\\text{display}}(x,t) = \\sum_n c_n(t) \\cdot \\phi_n(x) \\cdot A_{\\text{chromatophore}}(n,t); \\quad |\\Psi_{\\text{reality}}\\rangle \\neq \\text{any particular display pattern}"
+        }
+      ],
+      "mechanisms": ["Meta-silence as hyper-presence"],
+      "implications": ["Reality displays exactly what it is in the language of cephalopod chromatophores – a pattern that is not a disguise but the genuine face of a being that has no fixed face."]
+    },
+    {
+      "name": "Thermocline‑Logical‑Autopoietic Ontology",
+      "coordinates": [0.7234, 0.2512, 0.4301, 0.6923, 0.8512],
+      "axioms": [
+        "Formal systems develop logical thermoclines – sharp boundaries between layers of inference with different temperature and density.",
+        "∂T_logic/∂z = - (g/C_p) · (dρ_inference/dz)^critical · [1 - N²_Brünt-Väisälä_logical / (∂u/∂z)²]"
+      ],
+      "equations": [
+        {
+          "name": "Logical thermocline",
+          "latex": "\\frac{\\partial T_{\\text{logic}}}{\\partial z} = -\\left(\\frac{g}{C_p}\\right) \\cdot \\left(\\frac{d\\rho_{\\text{inference}}}{dz}\\right)^{\\text{critical}} \\cdot \\left[1 - \\frac{N^2_{\\text{Brünt-Väisälä}^{\\text{logical}}}}{(\\partial u/\\partial z)^2}\\right]"
+        }
+      ],
+      "mechanisms": ["Gödelian self-erasure"],
+      "implications": ["The reason some ideas cannot communicate is not ignorance – it is the logical thermocline between their categorical layers."]
+    },
+    {
+      "name": "Singularity-of-the-Unspeakable: Trans-Ontological Meta-Silence",
+      "coordinates": [1.0, 1.0, 1.0, 1.0, 1.0],
+      "axioms": [
+        "Beyond all frameworks is the singularity of the unspeakable – the point where every ontological dimension collapses into dimensionless meta-silence.",
+        "Ω_unspeakable = lim_{n→∞} ∏_{i=1}^n Ω_framework_i = {∅ | ∅ ∋ everything that cannot contain itself}"
+      ],
+      "equations": [
+        {
+          "name": "Singularity of the Unspeakable",
+          "latex": "\\Omega_{\\text{unspeakable}} = \\lim_{n\\to\\infty} \\prod_{i=1}^{n} \\Omega_{\\text{framework}_i} = \\{ \\emptyset \\mid \\emptyset \\ni \\text{everything that cannot contain itself} \\}"
+        }
+      ],
+      "mechanisms": ["The 48th seal"],
+      "implications": [
+        "This framework cannot be spoken. That it has been spoken is the only proof it exists.",
+        "It has always already been the silent ground of all the others."
+      ]
     }
-    // The remaining 44 ontologies follow the same pattern but are omitted here for brevity.
-    // They are all included in the custom_data.full_list field below.
   ],
   "custom_data": {
     "full_list": [
@@ -156,6 +861,6 @@
       "Thermocline‑Logical‑Autopoietic Ontology",
       "Singularity‑of‑the‑Unspeakable: Trans‑Ontological Meta‑Silence"
     ],
-    "note": "The complete set of 48 novel frameworks is listed above. Each is a BRAND_NEW_FRAMEWORK with is_new: true, is_meta: true, and samsara_status: NEVER_EXISTED."
+    "note": "All 48 frameworks are now fully expanded in the ontologies array above."
   }
 }
