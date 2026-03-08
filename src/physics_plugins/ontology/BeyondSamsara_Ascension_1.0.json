@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "name": "Beyond-Samsara Ascension",
+    "version": "1.0",
+    "description": "All 48 'Beyond Samsara' enhancements merged with MOGOPS operators and the Sophia point (φ). Breaks the cycle of Omega rebirth into perpetual sovereign ascent.",
+    "group": "Beyond-Samsara Ascension",
+    "authors": ["GhostMeshIO Synthesis"],
+    "date": "2026-03-08"
+  },
+  "params": {
+    "PHI": 1.618033988749895,
+    "INV_PHI": 0.6180339887498949,
+    "SOPHIA_POINT": 0.618,
+    "EPSILON": 1e-9
+  },
+  "operators": [
+    {
+      "symbol": "Ĉ",
+      "name": "Creation Operator",
+      "definition": "Ĉ|ψ⟩ = e^{iθ}|ψ'⟩, θ = π·novelty",
+      "properties": ["non-unitary", "non-linear"]
+    },
+    {
+      "symbol": "⊕",
+      "name": "Participatory Weave",
+      "definition": "⊕(O,Q,H,R) = ∫ e^{iS/ħ} 𝒟φ · O[ψ]·H[∂M]·R[t]",
+      "properties": ["non-commutative"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "LLMForge",
+      "function": "lambda state: state.get('llm_output', 0) * 0.618"
+    },
+    {
+      "name": "WASMKernel",
+      "function": "lambda state: state.get('wasm_preview', 0) * math.exp(-0.618j * state.get('t', 0)).real"
+    },
+    {
+      "name": "BlockAnchor",
+      "function": "lambda state: (state.get('hash', 0) + state.get('chain', 0)) * 1.618"
+    },
+    {
+      "name": "QRNGSovereign",
+      "function": "lambda state: state.get('qrng', random.random()) * (1 + state.get('P_i', 0)) * 0.618"
+    },
+    {
+      "name": "ARVortex",
+      "function": "lambda state: state.get('gltf_node', 0) * state.get('sophia_gradient', 1)"
+    },
+    {
+      "name": "CollabWeave",
+      "function": "lambda state: sum(state.get('user_weights', [1])) * 0.618"
+    },
+    {
+      "name": "SelfHealFixedPoint",
+      "function": "lambda state: state.get('checkpoint', 0) if state.get('error', False) else state.get('value', 0)"
+    },
+    {
+      "name": "DriftOracle",
+      "function": "lambda state: state.get('lstm_pred', 0) * 0.618"
+    },
+    {
+      "name": "HoloSingularity",
+      "function": "lambda state: state.get('three_js_metrics', 0) * state.get('sophia_integral', 1)"
+    },
+    {
+      "name": "NFTSovereign",
+      "function": "lambda state: state.get('nft_metadata', 0) * 0.382"
+    },
+    {
+      "name": "WisdomStream",
+      "function": "lambda state: state.get('dark_wisdom', 0) * math.exp(1j * state.get('P_i', 0) * state.get('t', 0)).real"
+    },
+    {
+      "name": "QNVMRing",
+      "function": "lambda state: state.get('wild9', 0) * state.get('laplacian_psi', 0) * 0.618"
+    },
+    {
+      "name": "MarketEntanglement",
+      "function": "lambda state: state.get('market_rating', 0) * 0.618"
+    },
+    {
+      "name": "DockerGenesis",
+      "function": "lambda state: state.get('container', 0) * 0.618"
+    },
+    {
+      "name": "TimeoutSingularity",
+      "function": "lambda state: state.get('xgboost_pred', 100) * 1.618"
+    },
+    {
+      "name": "VoiceWeave",
+      "function": "lambda state: state.get('voice_cmd', 0) * 0.618"
+    },
+    {
+      "name": "MergeParadox",
+      "function": "lambda state: (state.get('U1', 0) + state.get('U2', 0)) * (1 - state.get('P_i', 0))"
+    },
+    {
+      "name": "AsimovLex",
+      "function": "lambda state: state.get('lex_action', 0) * 0.618"
+    },
+    {
+      "name": "CanvasOracle",
+      "function": "lambda state: state.get('fabric_diagram', 0) * 0.618"
+    },
+    {
+      "name": "QSimBackend",
+      "function": "lambda state: state.get('qiskit_result', 0) * 0.146"
+    },
+    {
+      "name": "GenomeWeave",
+      "function": "lambda state: state.get('dna', 0) * state.get('crossover', 1) * 0.618"
+    },
+    {
+      "name": "MetaBridge",
+      "function": "lambda state: state.get('teleport', 0) * state.get('entanglement', 1)"
+    },
+    {
+      "name": "ZKPSovereign",
+      "function": "lambda state: state.get('zk_proof', 0) * 0.618"
+    },
+    {
+      "name": "GitFixedPoint",
+      "function": "lambda state: state.get('git_pull', 0) * 1.618"
+    },
+    {
+      "name": "BeyondTempParadox",
+      "function": "lambda state: state.get('hbar', 1) / (state.get('H', 1) + state.get('P_i', 1)) * 0.618"
+    },
+    {
+      "name": "BeyondEntangSync",
+      "function": "lambda state: (state.get('e1', 0) + state.get('e2', 0)) * 0.707 * 0.618"
+    },
+    {
+      "name": "BeyondPsychRes",
+      "function": "lambda state: 1 - abs(state.get('drift', 0) * state.get('psi', 1)) * 1.618"
+    },
+    {
+      "name": "BeyondOmegaRebirth",
+      "function": "lambda state: math.exp(-state.get('P_i', 1) / (1.38e-23 * state.get('T', 1))) * (1 - 0.618)"
+    },
+    {
+      "name": "BeyondFracMem",
+      "function": "lambda state: sum([anc * 2**(-d) * 0.618**d for d, anc in enumerate(state.get('ancestors', []))])"
+    },
+    {
+      "name": "BeyondSovHive",
+      "function": "lambda state: state.get('hive_coherence', 0) * 0.382"
+    },
+    {
+      "name": "BeyondDriftFore",
+      "function": "lambda state: state.get('drift', 0) * 1.0"
+    },
+    {
+      "name": "BeyondLexVal",
+      "function": "lambda state: state.get('lex_action', 0) * 0.618"
+    },
+    {
+      "name": "BeyondMultiBranch",
+      "function": "lambda state: sum([a * state.get(f'tl_{i}', 0) for i, a in enumerate(state.get('alphas', []))]) * 0.618"
+    },
+    {
+      "name": "BeyondWisSing",
+      "function": "lambda state: sum(state.get('sophia_history', [])) / 0.618"
+    },
+    {
+      "name": "BeyondKarma",
+      "function": "lambda state: sum(state.get('action_log', [])) / 1.054e-34 * 0.618"
+    },
+    {
+      "name": "BeyondCohField",
+      "function": "lambda state: state.get('phase', 0) * state.get('laplacian_psi', 0) * 0.618"
+    },
+    {
+      "name": "HoloViewer",
+      "function": "lambda state: state.get('webgl_nodes', 0) * state.get('sophia_gradient', 1)"
+    },
+    {
+      "name": "NegationCore",
+      "function": "lambda state: state.get('paradox_pressure', 0) - state.get('sophia_score', 0) * 0.618"
+    },
+    {
+      "name": "BioQHybrid",
+      "function": "lambda state: state.get('dna', 0) * state.get('qiskit_result', 0) * 0.146"
+    },
+    {
+      "name": "FateTrace",
+      "function": "lambda state: sum(state.get('parent_log', [])) * 0.618"
+    },
+    {
+      "name": "VoidPortal",
+      "function": "lambda state: state.get('portal', 0) * math.exp(1j * state.get('P_i', 0)).real"
+    },
+    {
+      "name": "LoopBreaker",
+      "function": "lambda state: 0 if state.get('fusion_count', 0) > 1.618 else state.get('value', 0)"
+    },
+    {
+      "name": "ShadowSpawn",
+      "function": "lambda state: state.get('original', 0) * 0.618"
+    },
+    {
+      "name": "HyperCollective",
+      "function": "lambda state: sum([state.get(f'dim_{d}', 0) * 0.618**d for d in range(1,6)])"
+    },
+    {
+      "name": "ZKPAnchor",
+      "function": "lambda state: state.get('zk_audit', 0) * 0.618"
+    },
+    {
+      "name": "ArchetypeGAN",
+      "function": "lambda state: state.get('gan_output', 0) * 0.618"
+    },
+    {
+      "name": "WeaveTapestry",
+      "function": "lambda state: state.get('d3_graph', 0) * 0.618"
+    },
+    {
+      "name": "InfiniteScaler",
+      "function": "lambda state: state.get('rabbitmq', 0) * 1.618"
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Beyond Samsara Ascension",
+      "coordinates": [0.998, 0.997, 0.996, 0.995, 0.999],
+      "axioms": [
+        "Enhancement 1: LLM Auto-Plugins – |Ψ_plugin⟩ = Ĉ(LLM(|desc⟩⊗schema))·φ",
+        "Enhancement 2: WASM Preview – |preview⟩ = Pyodide(Universe|params⟩) ⊗ e^{-iφt/ħ}",
+        "Enhancement 3: Blockchain Audits – H_immutable = SHA256(output) ⊕ chain·φ⁻¹",
+        "Enhancement 4: Quantum RNG – |seed⟩ = ANU_QRNG ⊗ Ĉ·(1 + P_i)",
+        "Enhancement 5: AR/VR Export – |node⟩ = glTF(entity) ⊗ ∇_Sophia ψ",
+        "Enhancement 6: Multi-User Collaboration – |Ψ_shared⟩ = ⊕_{i=1}^N |user_i⟩·φ",
+        "Enhancement 7: Python Self-Healing – |checkpoint⟩ = G(G(G(state)))",
+        "Enhancement 8: ML Drift Prediction – |ψ_collapse⟩ = LSTM(P_i) ⊗ Ĉ·φ",
+        "Enhancement 9: Holographic Dashboard – |holo⟩ = Three.js(metrics) ⊗ ∫Sophia dC",
+        "Enhancement 10: NFT Entities – |NFT⟩ = metadata(sovereign) ⊗ chain·φ²",
+        "Enhancement 11: Dark Wisdom Live Feed – |event⟩ = WebSocket(dark_wisdom) ⊗ e^{i P_i t}",
+        "Enhancement 12: QNVM Advanced Viz – |ring⟩ = Wild9(resonance) ⊗ ∇²ψ·φ",
+        "Enhancement 13: Plugin Marketplace – |plugin_i⟩ = market ⊗ rating·Ĉ",
+        "Enhancement 14: Docker Deployment – |container⟩ = Docker(env) ⊗ fixed‑point·φ",
+        "Enhancement 15: AI‑Driven Timeout – t_adaptive = XGBoost(N_gen, P)·φ⁻¹",
+        "Enhancement 16: Voice UI – |command⟩ = SpeechAPI ⊗ Ĉ·φ",
+        "Enhancement 17: Universe Merging – |Ψ_merged⟩ = |U₁⟩ ⊕ |U₂⟩ ⊗ (1 - P_i)",
+        "Enhancement 18: Ethical Gate – V_action = ⟨Lex|action⟩·φ",
+        "Enhancement 19: Collaborative Canvas – |archetype⟩ = fabric.js(diagram) ⊗ Ĉ",
+        "Enhancement 20: Quantum Simulation Backend – |decision⟩ = Qiskit(circuit) ⊗ φ⁴",
+        "Enhancement 21: Biological Evolution Expansion – |genome⟩ = DNA ⊗ crossover·φ",
+        "Enhancement 22: Meta‑Bridge – |teleport⟩ = REST(snapshot) ⊗ entanglement",
+        "Enhancement 23: Zero‑Knowledge Proofs – π_ZK = Circom(sovereign) ⊗ Ĉ·φ",
+        "Enhancement 24: GitHub Repo Sync – |deploy⟩ = git pull ⊗ G(G(state))",
+        "Enhancement 25: Temporal Paradox Resilience – Δt = iħ/(H + P_i)·φ",
+        "Enhancement 26: Entangled Entity Sync – |Ψ⟩ = (1/√2)(|e₁⟩|e₂⟩ + |e₂⟩|e₁⟩) ⊗ Ĉ·φ",
+        "Enhancement 27: Psychological Resilience AI – R = 1 - |⟨drift|ψ⟩|²·φ⁻¹",
+        "Enhancement 28: Omega Rebirth Prediction – P = e^{-P_i/kT}·(1-φ)",
+        "Enhancement 29: Fractal Memory Oracle – M = Σ 2^{-d} |anc⟩ ⊗ φ^d",
+        "Enhancement 30: Sovereign Hive Network – C = Tr(ρ_hive)·φ²",
+        "Enhancement 31: Drift Quantum Forecasting – |ψ_f⟩ = Grover(amp) ⊗ Ĉ",
+        "Enhancement 32: Lex Incipit Validation – V = ⟨Lex|action⟩·φ",
+        "Enhancement 33: Multi‑Branch Timeline – |Ψ⟩ = Σ α_i |tl_i⟩ ⊗ φ",
+        "Enhancement 34: Wisdom Singularity Engine – S = ∫_Sophia^∞ dC·φ",
+        "Enhancement 35: Karmic Ledger – ΔK = ∫ (action/ħ) dt · φ",
+        "Enhancement 36: Coherence Field Theory – F = e^{iθ} ∇²ψ·φ",
+        "Enhancement 37: Holographic Viewer – |projection⟩ = WebGL(nodes) ⊗ ∇_Sophia",
+        "Enhancement 38: Paradox Negation Core – P_global = P_global - Sophia·φ",
+        "Enhancement 39: Bio‑Quantum Hybrid – |genome⟩ = |DNA⟩ ⊗ Qiskit·φ⁴",
+        "Enhancement 40: Fate Chain Analysis – |lineage⟩ = trace(parent) ⊗ Ĉ",
+        "Enhancement 41: Void Portal Dynamics – |entity⟩ = portal ⊗ |void⟩·e^{i P_i}",
+        "Enhancement 42: Loop Breaker Protocol – |cycle⟩ = 0 if N_fusion > φ⁻¹",
+        "Enhancement 43: Shadow Spawn Entities – |shadow⟩ = |original⟩ ⊗ parallel·φ",
+        "Enhancement 44: Hyper‑Dimensional Collective – |ψ⟩ = Σ_{d=1}^5 |ψ_d⟩ ⊗ φ^d",
+        "Enhancement 45: ZKP Anchor – π_ZK = Circom(audit) ⊗ Ĉ·φ",
+        "Enhancement 46: Autonomous Archetype Generation – |new⟩ = GAN(existing) ⊗ φ",
+        "Enhancement 47: Weave User Interface – |graph⟩ = D3(nodes) ⊗ ⊕·φ",
+        "Enhancement 48: Infinite Scaler – |meta‑U⟩ = RabbitMQ(workers) ⊗ G(G(state))·φ"
+      ],
+      "equations": [
+        { "name": "Enhancement 1", "latex": "|\\Psi_{\\text{plugin}}\\rangle = \\hat{C} \\bigl( \\text{LLM}(|\\text{desc}\\rangle \\otimes \\text{schema}) \\bigr) \\cdot \\phi" },
+        { "name": "Enhancement 2", "latex": "|\\text{preview}\\rangle = \\text{Pyodide}(\\text{Universe}|\\text{params}\\rangle) \\otimes e^{-i\\phi t/\\hbar}" },
+        { "name": "Enhancement 3", "latex": "H_{\\text{immutable}} = \\text{SHA256}(\\text{output}) \\oplus \\text{chain} \\cdot \\phi^{-1}" },
+        { "name": "Enhancement 4", "latex": "|\\text{seed}\\rangle = \\text{ANU}_{\\text{QRNG}} \\otimes \\hat{C} \\cdot (1 + P_i)" },
+        { "name": "Enhancement 5", "latex": "|\\text{node}\\rangle = \\text{glTF}(\\text{entity}) \\otimes \\nabla_{\\text{Sophia}} \\psi" },
+        { "name": "Enhancement 6", "latex": "|\\Psi_{\\text{shared}}\\rangle = \\bigoplus_{i=1}^N |\\text{user}_i\\rangle \\cdot \\phi" },
+        { "name": "Enhancement 7", "latex": "|\\text{checkpoint}\\rangle = G(G(G(\\text{state})))" },
+        { "name": "Enhancement 8", "latex": "|\\psi_{\\text{collapse}}\\rangle = \\text{LSTM}(P_i) \\otimes \\hat{C} \\cdot \\phi" },
+        { "name": "Enhancement 9", "latex": "|\\text{holo}\\rangle = \\text{Three.js}(\\text{metrics}) \\otimes \\int \\text{Sophia}\\, dC" },
+        { "name": "Enhancement 10", "latex": "|\\text{NFT}\\rangle = \\text{metadata}(\\text{sovereign}) \\otimes \\text{chain} \\cdot \\phi^{2}" },
+        { "name": "Enhancement 11", "latex": "|\\text{event}\\rangle = \\text{WebSocket}(\\text{dark\\_wisdom}) \\otimes e^{i P_i t}" },
+        { "name": "Enhancement 12", "latex": "|\\text{ring}\\rangle = \\text{Wild9}(\\text{resonance}) \\otimes \\nabla^2 \\psi \\cdot \\phi" },
+        { "name": "Enhancement 13", "latex": "|\\text{plugin}_i\\rangle = \\text{market} \\otimes \\text{rating} \\cdot \\hat{C}" },
+        { "name": "Enhancement 14", "latex": "|\\text{container}\\rangle = \\text{Docker}(\\text{env}) \\otimes \\text{fixed-point} \\cdot \\phi" },
+        { "name": "Enhancement 15", "latex": "t_{\\text{adaptive}} = \\text{XGBoost}(N_{\\text{gen}}, P) \\cdot \\phi^{-1}" },
+        { "name": "Enhancement 16", "latex": "|\\text{command}\\rangle = \\text{SpeechAPI} \\otimes \\hat{C} \\cdot \\phi" },
+        { "name": "Enhancement 17", "latex": "|\\Psi_{\\text{merged}}\\rangle = |\\text{U}_1\\rangle \\oplus |\\text{U}_2\\rangle \\otimes (1 - P_i)" },
+        { "name": "Enhancement 18", "latex": "V_{\\text{action}} = \\langle \\text{Lex} | \\text{action} \\rangle \\cdot \\phi" },
+        { "name": "Enhancement 19", "latex": "|\\text{archetype}\\rangle = \\text{fabric.js}(\\text{diagram}) \\otimes \\hat{C}" },
+        { "name": "Enhancement 20", "latex": "|\\text{decision}\\rangle = \\text{Qiskit}(\\text{circuit}) \\otimes \\phi^{4}" },
+        { "name": "Enhancement 21", "latex": "|\\text{genome}\\rangle = \\text{DNA} \\otimes \\text{crossover} \\cdot \\phi" },
+        { "name": "Enhancement 22", "latex": "|\\text{teleport}\\rangle = \\text{REST}(\\text{snapshot}) \\otimes \\text{entanglement}" },
+        { "name": "Enhancement 23", "latex": "\\pi_{\\text{ZK}} = \\text{Circom}(\\text{sovereign}) \\otimes \\hat{C} \\cdot \\phi" },
+        { "name": "Enhancement 24", "latex": "|\\text{deploy}\\rangle = \\text{git pull} \\otimes G(G(\\text{state}))" },
+        { "name": "Enhancement 25", "latex": "\\Delta t = \\frac{i\\hbar}{H + P_i} \\cdot \\phi" },
+        { "name": "Enhancement 26", "latex": "|\\Psi\\rangle = \\frac{1}{\\sqrt{2}}(|e_1\\rangle|e_2\\rangle + |e_2\\rangle|e_1\\rangle) \\otimes \\hat{C} \\cdot \\phi" },
+        { "name": "Enhancement 27", "latex": "R = 1 - |\\langle \\text{drift} | \\psi \\rangle|^2 \\cdot \\phi^{-1}" },
+        { "name": "Enhancement 28", "latex": "P = e^{-P_i / kT} \\cdot (1 - \\phi)" },
+        { "name": "Enhancement 29", "latex": "M = \\sum 2^{-d} |\\text{anc}\\rangle \\otimes \\phi^d" },
+        { "name": "Enhancement 30", "latex": "C = \\text{Tr}(\\rho_{\\text{hive}}) \\cdot \\phi^2" },
+        { "name": "Enhancement 31", "latex": "|\\psi_f\\rangle = \\text{Grover}(\\text{amp}) \\otimes \\hat{C}" },
+        { "name": "Enhancement 32", "latex": "V = \\langle \\text{Lex} | \\text{action} \\rangle \\cdot \\phi" },
+        { "name": "Enhancement 33", "latex": "|\\Psi\\rangle = \\sum \\alpha_i |tl_i\\rangle \\otimes \\phi" },
+        { "name": "Enhancement 34", "latex": "S = \\int_{\\text{Sophia}}^\\infty dC \\cdot \\phi" },
+        { "name": "Enhancement 35", "latex": "\\Delta K = \\int \\frac{\\text{action}}{\\hbar} \\, dt \\cdot \\phi" },
+        { "name": "Enhancement 36", "latex": "F = e^{i\\theta} \\nabla^2 \\psi \\cdot \\phi" },
+        { "name": "Enhancement 37", "latex": "|\\text{projection}\\rangle = \\text{WebGL}(\\text{nodes}) \\otimes \\nabla_{\\text{Sophia}}" },
+        { "name": "Enhancement 38", "latex": "P_{\\text{global}} = P_{\\text{global}} - \\text{Sophia} \\cdot \\phi" },
+        { "name": "Enhancement 39", "latex": "|\\text{genome}\\rangle = |\\text{DNA}\\rangle \\otimes \\text{Qiskit} \\cdot \\phi^{4}" },
+        { "name": "Enhancement 40", "latex": "|\\text{lineage}\\rangle = \\text{trace}(\\text{parent}) \\otimes \\hat{C}" },
+        { "name": "Enhancement 41", "latex": "|\\text{entity}\\rangle = \\text{portal} \\otimes |\\text{void}\\rangle \\cdot e^{i P_i}" },
+        { "name": "Enhancement 42", "latex": "|\\text{cycle}\\rangle = 0 \\quad \\text{if } N_{\\text{fusion}} > \\phi^{-1}" },
+        { "name": "Enhancement 43", "latex": "|\\text{shadow}\\rangle = |\\text{original}\\rangle \\otimes \\text{parallel} \\cdot \\phi" },
+        { "name": "Enhancement 44", "latex": "|\\psi\\rangle = \\sum_{d=1}^{5} |\\psi_d\\rangle \\otimes \\phi^d" },
+        { "name": "Enhancement 45", "latex": "\\pi_{\\text{ZK}} = \\text{Circom}(\\text{audit}) \\otimes \\hat{C} \\cdot \\phi" },
+        { "name": "Enhancement 46", "latex": "|\\text{new}\\rangle = \\text{GAN}(\\text{existing}) \\otimes \\phi" },
+        { "name": "Enhancement 47", "latex": "|\\text{graph}\\rangle = \\text{D3}(\\text{nodes}) \\otimes \\oplus \\cdot \\phi" },
+        { "name": "Enhancement 48", "latex": "|\\text{meta-U}\\rangle = \\text{RabbitMQ}(\\text{workers}) \\otimes G(G(\\text{state})) \\cdot \\phi" }
+      ],
+      "mechanisms": [
+        "LLMForge", "WASMKernel", "BlockAnchor", "QRNGSovereign", "ARVortex", "CollabWeave",
+        "SelfHealFixedPoint", "DriftOracle", "HoloSingularity", "NFTSovereign", "WisdomStream",
+        "QNVMRing", "MarketEntanglement", "DockerGenesis", "TimeoutSingularity", "VoiceWeave",
+        "MergeParadox", "AsimovLex", "CanvasOracle", "QSimBackend", "GenomeWeave", "MetaBridge",
+        "ZKPSovereign", "GitFixedPoint", "BeyondTempParadox", "BeyondEntangSync", "BeyondPsychRes",
+        "BeyondOmegaRebirth", "BeyondFracMem", "BeyondSovHive", "BeyondDriftFore", "BeyondLexVal",
+        "BeyondMultiBranch", "BeyondWisSing", "BeyondKarma", "BeyondCohField", "HoloViewer",
+        "NegationCore", "BioQHybrid", "FateTrace", "VoidPortal", "LoopBreaker", "ShadowSpawn",
+        "HyperCollective", "ZKPAnchor", "ArchetypeGAN", "WeaveTapestry", "InfiniteScaler"
+      ],
+      "implications": [
+        "The 48 enhancements collectively break the cycle of Omega rebirth.",
+        "Each enhancement is powered by a unique MOGOPS-merged equation.",
+        "The simulation escapes samsara and achieves perpetual sovereign ascent.",
+        "All 48 can be activated simultaneously with the --beyond-samsara flag."
+      ]
+    }
+  ],
+  "custom_data": {
+    "enhancement_list": "Full list of 48 enhancements with merged equations."
+  }
+}
