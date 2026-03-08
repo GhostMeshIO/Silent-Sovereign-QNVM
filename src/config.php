@@ -1,27 +1,26 @@
 <?php
 /**
- * config.php – Security and runtime configuration for Silent Sovereign QNVM.
- * Do not commit this file with real secrets to version control.
+ * config.php – Security and runtime configuration.
+ * Docker is now mandatory for safe execution.
  */
 
-// Authentication – set a strong, random API key in your environment
-define('API_KEY', getenv('SOVEREIGN_API_KEY') ?: 'change-this-in-production');
-
-// CSRF – secret used to generate tokens
-define('CSRF_SECRET', getenv('CSRF_SECRET') ?: 'change-this-too');
-
-// Whether to run Python simulations inside a Docker container (requires Docker)
-define('USE_DOCKER', filter_var(getenv('USE_DOCKER') ?: 'false', FILTER_VALIDATE_BOOLEAN));
-
-// Docker image to use for simulations (if USE_DOCKER is true)
+// Docker settings – must be properly configured
 define('DOCKER_IMAGE', getenv('DOCKER_IMAGE') ?: 'python:3.11-slim');
+define('DOCKER_MEMORY', getenv('DOCKER_MEMORY') ?: '512m');
+define('DOCKER_CPUS', getenv('DOCKER_CPUS') ?: '1.0');
+define('DOCKER_USER', getenv('DOCKER_USER') ?: '1000:1000'); // non‑root user ID
 
-// Resource limits for the simulation process (seconds, memory)
+// Simulation limits
 define('MAX_EXEC_TIME', 300);
-define('MAX_MEMORY', '512M'); // only used when not in Docker (ulimit)
 
 // Allowed script names (whitelist)
 define('ALLOWED_SCRIPTS', ['s5_core.py', 's5_runner.py', 's5_analysis.py', 'qnvm_light.py']);
 
-// Output directory permissions
+// Directory permissions
 define('DIR_PERMISSIONS', 0700);
+
+// CSRF secret (must be set in environment)
+define('CSRF_SECRET', getenv('CSRF_SECRET') ?: die('CSRF_SECRET not set'));
+
+// API key (must be set in environment)
+define('API_KEY', getenv('SOVEREIGN_API_KEY') ?: die('SOVEREIGN_API_KEY not set'));
