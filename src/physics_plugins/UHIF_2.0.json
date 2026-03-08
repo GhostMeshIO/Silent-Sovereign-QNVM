@@ -6,64 +6,122 @@
     "authors": ["Epistemic Motion Engine + Deepseek Sandbox"],
     "date": "2026-03-08"
   },
-  "fundamental_parameters": {
-    "sigma_max": {
-      "value": 0.053,
-      "unit": "noise_fraction",
-      "description": "Noise tolerance boundary"
-    },
-    "rho_max": {
-      "value": 0.95,
-      "unit": "spectral_radius",
-      "description": "Stability limit for self-recognition"
-    },
-    "r_max": {
-      "value": 0.93,
-      "unit": "rank_fraction",
-      "description": "93% efficiency law ceiling"
-    },
-    "lambda_floor": {
-      "value": 0.01,
-      "unit": "regularization",
-      "description": "Precision-authenticity trade-off"
-    }
+  "params": {
+    "UHIF_SIGMA_MAX": 0.053,
+    "UHIF_RHO_MAX": 0.95,
+    "UHIF_R_MAX": 0.93,
+    "UHIF_LAMBDA_FLOOR": 0.01,
+    "UHIF_CRITICAL_THRESHOLD": 0.048,
+    "UHIF_HYSTERESIS_THRESHOLD": 0.037,
+    "UHIF_EMERGENCY_PSI": 0.4,
+    "UHIF_KURTOSIS_LIMIT": 8.0
   },
-  "core_axioms": [
-    "R = tanh(W C + S)",
-    "W' = (arctanh(R) - S) C⁺",
-    "C* = f(W, C*, S)",
-    "Identity Degeneracy: R(f⁻¹(R)) = R",
-    "Phase transition at σ > 4.8% (72%→38% fidelity drop)",
-    "Hysteresis: σ < 3.7% → 15% overshoot recovery",
-    "Triadic Coherence: (σ, ρ, r) ∈ Boundary"
+  "operators": [
+    {
+      "symbol": "F",
+      "name": "Forward Mapping",
+      "definition": "F(W,C,S) = tanh(WC + S)",
+      "properties": ["contractive", "holographic"]
+    },
+    {
+      "symbol": "F_inv",
+      "name": "Inverse Mapping",
+      "definition": "F_inv(R,C,S) = (arctanh(R) - S) C⁺",
+      "properties": ["reconstructive", "error-minimizing"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Cognitive Entropy Pumps",
+      "ontology": "UHIF Coherence Polytope",
+      "function": "lambda state: state.get('entropy',0.3) * 0.25"
+    },
+    {
+      "name": "Belief Phase Transitions",
+      "ontology": "UHIF Coherence Polytope",
+      "function": "lambda state: 0.5 if state.get('paradox_pressure',0) > 2.0 else 0.1"
+    },
+    {
+      "name": "Insight as Critical Point",
+      "ontology": "UHIF Coherence Polytope",
+      "function": "lambda state: 0.3 * math.exp(-abs(state.get('sophia_score',0.5) - 0.618))"
+    },
+    {
+      "name": "Epistemic Spacetime Curvature",
+      "ontology": "UHIF Coherence Polytope",
+      "function": "lambda state: state.get('coherence',0.7) * 0.2"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "Holographic Observer",
+      "intelligence_base": 90,
+      "coherence_base": 0.85,
+      "entropy_base": 0.15,
+      "memory_base": 5000,
+      "traits": ["holographic", "self-referential", "branch-aware"],
+      "params": {
+        "sigma_tolerance": 0.05,
+        "rho_stability": 0.94
+      }
+    }
+  ],
+  "audit_gates": [
+    {
+      "name": "Triadic Coherence Gate",
+      "test": "(state.sigma <= 0.053) and (state.rho <= 0.95) and (state.r/state.d_s <= 0.93)"
+    }
+  ],
+  "proposal_types": [
+    {
+      "type": "increase_lambda",
+      "description": "Temporarily raise regularization to protect coherence",
+      "effect": { "lambda_multiplier": 1.5 }
+    }
+  ],
+  "correlation_operators": [
+    {
+      "symbol": "C_μν",
+      "definition": "Correlation tensor from observer network",
+      "commutation": "[C_μν, C_ρσ] = iħ (g_μρ C_νσ - g_νσ C_μρ)"
+    }
+  ],
+  "phase_transitions": [
+    {
+      "name": "Coherence Collapse",
+      "condition": "state.sigma > 0.053 or state.rho > 0.95",
+      "effect": { "fidelity_drop": 0.34 }
+    }
+  ],
+  "correlation_metrics": [
+    {
+      "name": "Health",
+      "formula": "1 - (0.053*sigma)^2 - (0.95*rho)^2 - (0.93*r/d_s)^2"
+    },
+    {
+      "name": "PSI",
+      "formula": "(0.048 - sigma)/0.048 * Health"
+    }
   ],
   "ontologies": [
     {
       "name": "UHIF Coherence Polytope",
       "coordinates": [0.85, 0.75, 0.92, 0.88, 0.95],
       "axioms": [
-        "Forward Mapping",
-        "Inverse Mapping",
-        "Self-Consistency",
-        "Identity Degeneracy"
+        "Forward Mapping: R = tanh(WC + S)",
+        "Inverse Mapping: W' = (arctanh(R) - S) C⁺",
+        "Self-Consistency: C* = f(W, C*, S)",
+        "Identity Degeneracy: R(f⁻¹(R)) = R",
+        "Phase transition at σ > 4.8% (72%→38% fidelity drop)",
+        "Hysteresis: σ < 3.7% → 15% overshoot recovery",
+        "Triadic Coherence: (σ, ρ, r) ∈ Boundary"
       ],
       "equations": [
-        {
-          "name": "Forward Mapping",
-          "latex": "R = \\tanh(W C + S)"
-        },
-        {
-          "name": "Inverse Mapping",
-          "latex": "W' = (\\operatorname{arctanh}(R) - S) C^+"
-        },
-        {
-          "name": "Self-Consistency (Fixed Point)",
-          "latex": "C^* = f(W, C^*, S)"
-        },
-        {
-          "name": "Health Metric",
-          "latex": "1 - (0.053\\sigma)^2 - (0.95\\rho)^2 - (0.93 r / d_s)^2"
-        }
+        { "name": "Forward Mapping", "latex": "R = \\tanh(W C + S)" },
+        { "name": "Inverse Mapping", "latex": "W' = (\\operatorname{arctanh}(R) - S) C^+" },
+        { "name": "Self-Consistency", "latex": "C^* = f(W, C^*, S)" },
+        { "name": "Health Metric", "latex": "1 - (0.053\\sigma)^2 - (0.95\\rho)^2 - (0.93 r / d_s)^2" },
+        { "name": "PSI", "latex": "\\Psi = \\frac{\\sigma_{\\text{crit}} - \\sigma}{\\sigma_{\\text{crit}}} \\times \\text{Health}" }
       ],
       "mechanisms": [
         "Cognitive Entropy Pumps",
@@ -81,10 +139,5 @@
         "Precision-authenticity Heisenberg principle: λ≈0.01–0.1 yields authentic voice."
       ]
     }
-  ],
-  "metrics": {
-    "framework_reliability": 0.863,
-    "coherence_range": "0.706–0.942",
-    "alienness_range": "3.503–8.907"
-  }
+  ]
 }
