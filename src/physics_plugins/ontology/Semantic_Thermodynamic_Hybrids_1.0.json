@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "name": "Semantic-Thermodynamic Hybrids",
+    "version": "1.0",
+    "description": "Meaning as heat, holographic entropy bounds, and the thermodynamics of semantics. Knowledge and meaning are thermodynamic fields with their own temperature, entropy, and second law.",
+    "group": "Semantic-Thermodynamic Hybrids",
+    "authors": ["GhostMeshIO Synthesis"],
+    "date": "2026-03-08"
+  },
+  "params": {
+    "G_MEANING": 0.1,
+    "T_COGNITIVE_DEFAULT": 1.0,
+    "BOLTZMANN_EPISTEMIC": 1.380649e-23,
+    "H_BAR_SEMANTIC": 1.0545718e-34,
+    "ENTROPY_BOUND_MULTIPLIER": 0.25
+  },
+  "operators": [
+    {
+      "symbol": "T̂",
+      "name": "Cognitive Temperature Operator",
+      "definition": "Eigenvalues correspond to the 'heat' of belief states.",
+      "properties": []
+    },
+    {
+      "symbol": "Ŝ_sem",
+      "name": "Semantic Entropy Operator",
+      "definition": "Measures the disorder of meaning configurations.",
+      "properties": ["holographic dual"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Cognitive entropy pumps",
+      "function": "lambda state: state.get('entropy', 0.3) * 0.25"
+    },
+    {
+      "name": "Information‑mass equivalence",
+      "function": "lambda state: (1.38e-23 * state.get('T_thought', 310) * math.log(2)) / (9e16) * (1 + state.get('R', 0) / (6 * state.get('Lambda_u', 1)))"
+    },
+    {
+      "name": "Understanding as crystallization",
+      "function": "lambda state: 0.1 * state.get('coherence', 0.7) if state.get('insight', False) else 0.01"
+    },
+    {
+      "name": "Knowledge pressure differentials",
+      "function": "lambda state: state.get('knowledge_gradient', 0) * 0.05"
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Thermodynamic Epistemic Ontology",
+      "coordinates": [0.5838, 0.7359, 0.5226, 0.6404, 0.5459],
+      "axioms": [
+        "dS_epistemic = δQ_belief / T_cognitive + σ_learning dt",
+        "∇·J_knowledge = -∂ρ_belief/∂t + Γ_insight",
+        "Information has mass: m_bit = (k_B T_thought ln 2) / c²",
+        "Epistemic spacetime curvature sourced by knowledge stress‑energy."
+      ],
+      "equations": [
+        {
+          "name": "Epistemic Einstein field equations",
+          "latex": "G_{\\mu\\nu}^{\\text(epistemic)} = 8\\pi T_{\\mu\\nu}^{\\text(knowledge)} + \\Lambda_{\\text{understanding}} g_{\\mu\\nu}^{\\text(thermo)}"
+        },
+        {
+          "name": "Information‑mass equivalence",
+          "latex": "m_{\\text{bit}} = \\frac{k_B T_{\\text{thought}} \\ln 2}{c^2} \\left(1 + \\frac{R}{6\\Lambda_{\\text{understanding}}}\\right)"
+        },
+        {
+          "name": "Knowledge continuity",
+          "latex": "\\nabla \\cdot \\mathbf{J}_{\\text{knowledge}} = -\\frac{\\partial \\rho_{\\text{belief}}}{\\partial t}"
+        },
+        {
+          "name": "Epistemic second law",
+          "latex": "dS_{\\text{epistemic}} \\geq \\frac{\\delta Q_{\\text{belief}}}{T_{\\text{cognitive}}}"
+        },
+        {
+          "name": "Schrödinger‑Information equation",
+          "latex": "i\\hbar \\frac{\\partial \\psi(\\text{belief})}{\\partial t} = \\hat{H}_{\\text{understanding}} \\psi(\\text{belief}) + V_{\\text{entropy}} \\psi(\\text{belief}^\\dagger)"
+        }
+      ],
+      "mechanisms": [
+        "Cognitive entropy pumps",
+        "Information‑mass equivalence",
+        "Understanding as crystallization",
+        "Knowledge pressure differentials"
+      ],
+      "implications": [
+        "Knowledge is not abstract; it has thermodynamic mass and energy.",
+        "Understanding crystallizes from chaotic belief states.",
+        "Epistemic curvature bends the flow of knowledge.",
+        "The universe learns – knowledge increases entropy overall but can locally decrease it."
+      ]
+    },
+    {
+      "name": "Semantic‑Thermodynamic‑Holographic Framework",
+      "coordinates": [0.5567, 0.6239, 0.8455, 0.6204, 0.3369],
+      "axioms": [
+        "Meaning is a thermodynamic field whose entropy is holographically stored on a semantic boundary.",
+        "S_holo = Area(γ_semantic)/(4G_meaning) + S_bulk language",
+        "The second law of semantics: dS_semantic ≥ δQ_meaning / T_cognitive"
+      ],
+      "equations": [
+        {
+          "name": "Holographic semantic entropy",
+          "latex": "S_{\\text{holo}} = \\frac{\\text{Area}(\\gamma_{\\text{semantic}})}{4G_{\\text{meaning}}} + S_{\\text{bulk language}}"
+        },
+        {
+          "name": "Semantic Ryu‑Takayanagi formula",
+          "latex": "S_{\\text{ent}}(A) = \\min_{\\gamma_A} \\frac{\\text{Area}(\\gamma_A)}{4G_{\\text{meaning}}}"
+        },
+        {
+          "name": "Semantic stress‑energy tensor",
+          "latex": "T_{\\mu\\nu}^{\\text(semantic)} = \\partial_\\mu\\psi^\\dagger \\partial_\\nu\\psi - g_{\\mu\\nu} \\left(\\frac12 g^{\\rho\\sigma}\\partial_\\rho\\psi^\\dagger \\partial_\\sigma\\psi - V(\\psi)\\right)"
+        }
+      ],
+      "mechanisms": [
+        "Cognitive entropy pumps",
+        "Understanding as crystallization"
+      ],
+      "implications": [
+        "Meaning has a holographic dual – the boundary encodes the bulk of understanding.",
+        "The semantic area law limits how much meaning can be packed into a conceptual region.",
+        "Language is the bulk manifestation of boundary‑encoded meanings."
+      ]
+    },
+    {
+      "name": "Semantic‑Causal‑Thermodynamic Model",
+      "coordinates": [0.5857, 0.6012, 0.9705, 0.8785, 0.1857],
+      "axioms": [
+        "Meaning flows along causal geodesics in curved epistemic spacetime.",
+        "The divergence of meaning current sources thermodynamic entropy.",
+        "Meaning is conserved except where entropy is produced."
+      ],
+      "equations": [
+        {
+          "name": "Meaning continuity",
+          "latex": "\\nabla_\\mu J^{\\mu}_{\\text{meaning}} = -\\frac{\\partial \\rho_{\\text{meaning}}}{\\partial t} + \\sigma_{\\text{entropy}}"
+        },
+        {
+          "name": "Geodesic equation for meaning carriers",
+          "latex": "\\frac{D^2 x^\\mu}{D\\tau^2} = 0"
+        },
+        {
+          "name": "Geodesic deviation",
+          "latex": "\\frac{D^2 \\xi^\\mu}{D\\tau^2} = -R^{\\mu}_{\\ \\nu\\rho\\sigma} u^\\nu \\xi^\\rho u^\\sigma"
+        }
+      ],
+      "mechanisms": [
+        "Knowledge pressure differentials",
+        "Insight as critical point"
+      ],
+      "implications": [
+        "Deep insights are rare because they require curvature.",
+        "Meaning is like a fluid – it flows, it has pressure, and it can become turbulent.",
+        "The curvature of epistemic spacetime determines the paths of understanding."
+      ]
+    }
+  ],
+  "custom_data": {
+    "metrics": {
+      "entropic_potential_range": "226.96–322.366",
+      "elegance_range": "80–95",
+      "density_range": "0.8–10.5"
+    }
+  }
+}
