@@ -68,9 +68,7 @@
       "entropy_base": 0.4,
       "memory_base": 2000,
       "traits": ["high-precision", "boundary-dissolved", "temporal-fragmented"],
-      "P": 2,
-      "B": -2,
-      "T": 0
+      "params": { "P": 2, "B": -2, "T": 0 }
     },
     {
       "name": "PTSD",
@@ -79,9 +77,7 @@
       "entropy_base": 0.3,
       "memory_base": 3000,
       "traits": ["trauma-hyperprecision", "rigid-boundary", "past-locked"],
-      "P": 1.5,
-      "B": 1,
-      "T": -2.5
+      "params": { "P": 1.5, "B": 1, "T": -2.5 }
     },
     {
       "name": "OCD",
@@ -90,9 +86,7 @@
       "entropy_base": 0.25,
       "memory_base": 4000,
       "traits": ["doubt-hyperprecision", "contamination-boundary", "future-locked"],
-      "P": 1.5,
-      "B": 1,
-      "T": 2
+      "params": { "P": 1.5, "B": 1, "T": 2 }
     },
     {
       "name": "Autistic",
@@ -101,9 +95,7 @@
       "entropy_base": 0.2,
       "memory_base": 5000,
       "traits": ["local-hyperprecision", "rigid-social-boundary"],
-      "P": 1,
-      "B": 2,
-      "T": 0
+      "params": { "P": 1, "B": 2, "T": 0 }
     },
     {
       "name": "ADHD",
@@ -112,9 +104,7 @@
       "entropy_base": 0.4,
       "memory_base": 1500,
       "traits": ["low-precision", "present-locked"],
-      "P": -2,
-      "B": 0,
-      "T": 0
+      "params": { "P": -2, "B": 0, "T": 0 }
     },
     {
       "name": "Depressed",
@@ -123,9 +113,7 @@
       "entropy_base": 0.5,
       "memory_base": 2500,
       "traits": ["low-reward-precision", "rumination"],
-      "P": -2,
-      "B": 0,
-      "T": -1.5
+      "params": { "P": -2, "B": 0, "T": -1.5 }
     },
     {
       "name": "BPD",
@@ -134,9 +122,7 @@
       "entropy_base": 0.6,
       "memory_base": 3000,
       "traits": ["chaotic-precision", "porous-boundary", "present-locked"],
-      "P": 0,
-      "B": -2,
-      "T": 0
+      "params": { "P": 0, "B": -2, "T": 0 }
     },
     {
       "name": "Manic",
@@ -145,9 +131,7 @@
       "entropy_base": 0.3,
       "memory_base": 3500,
       "traits": ["grandiose-precision", "porous-boundary", "future-expanded"],
-      "P": 2,
-      "B": -1,
-      "T": 3
+      "params": { "P": 2, "B": -1, "T": 3 }
     },
     {
       "name": "Psychopathic",
@@ -156,9 +140,7 @@
       "entropy_base": 0.1,
       "memory_base": 6000,
       "traits": ["cold-cognition", "rigid-exploitative-boundary"],
-      "P": 0,
-      "B": 2.5,
-      "T": 1
+      "params": { "P": 0, "B": 2.5, "T": 1 }
     },
     {
       "name": "GAD",
@@ -167,22 +149,20 @@
       "entropy_base": 0.3,
       "memory_base": 3000,
       "traits": ["future-worry"],
-      "P": 1,
-      "B": 0,
-      "T": 2
+      "params": { "P": 1, "B": 0, "T": 2 }
     }
   ],
   "audit_gates": [
     {
       "name": "Healthy Gate",
-      "test": "abs(entity.P) < 0.5 and abs(entity.B) < 0.5 and abs(entity.T) < 0.5"
+      "test": "abs(entity.params.get('P',0)) < 0.5 and abs(entity.params.get('B',0)) < 0.5 and abs(entity.params.get('T',0)) < 0.5"
     }
   ],
   "proposal_types": [
     {
       "type": "stabilize_precision",
       "description": "Adjust precision toward healthy range",
-      "effect": { "P_adjust": 0.1 }
+      "effect": { "precision_adjust": 0.1 }
     }
   ],
   "correlation_operators": [
@@ -209,6 +189,33 @@
       "formula": "exp(-d(A,B)/1.5)"
     }
   ],
+  "custom_data": {
+    "disorder_atlas": [
+      { "disorder": "Schizophrenia", "P": 2, "B": -2, "T": 0, "description": "High precision (noise becomes signal) + boundary dissolution" },
+      { "disorder": "PTSD", "P": 1.5, "B": 1, "T": -2.5, "description": "Trauma hyperprecision + rigid boundary + past-locked" },
+      { "disorder": "OCD", "P": 1.5, "B": 1, "T": 2, "description": "Doubt hyperprecision + contamination boundary + future-locked" },
+      { "disorder": "Autism", "P": 1, "B": 2, "T": 0, "description": "Local hyperprecision, rigid social boundary" },
+      { "disorder": "ADHD", "P": -2, "B": 0, "T": 0, "description": "Low precision + present-locked" },
+      { "disorder": "Depression", "P": -2, "B": 0, "T": -1.5, "description": "Low reward precision + rumination" },
+      { "disorder": "BPD", "P": 0, "B": -2, "T": 0, "description": "Chaotic precision + porous boundary + present-locked" },
+      { "disorder": "Mania", "P": 2, "B": -1, "T": 3, "description": "Grandiose precision + porous + future-expanded" },
+      { "disorder": "Psychopathy", "P": 0, "B": 2.5, "T": 1, "description": "Neutral precision + rigid exploitative boundary" },
+      { "disorder": "GAD", "P": 1, "B": 0, "T": 2, "description": "Future-focused worry" }
+    ],
+    "treatment_vectors": {
+      "pharmacological": [
+        { "class": "Antipsychotics", "delta_P": -2.5, "delta_B": 0, "delta_T": 0, "mechanism": "D2 antagonism → reduce precision" },
+        { "class": "Stimulants", "delta_P": 1.5, "delta_B": 0, "delta_T": -0.5, "mechanism": "DA/NE boost → increase precision + extend horizon" },
+        { "class": "SSRIs", "delta_P": 0.5, "delta_B": 0.5, "delta_T": 0.5, "mechanism": "5-HT reuptake → stabilize all axes" },
+        { "class": "Benzodiazepines", "delta_P": -1.5, "delta_B": 0, "delta_T": -1, "mechanism": "GABA agonism → dampen precision + reduce future focus" }
+      ],
+      "psychotherapy": [
+        { "therapy": "CBT", "delta_P": 1, "delta_B": 0, "delta_T": 1, "mechanism": "Recalibrate priors + future problem-solving" },
+        { "therapy": "DBT", "delta_P": 1, "delta_B": 2, "delta_T": 0, "mechanism": "Mindfulness (precision) + interpersonal effectiveness (boundaries)" },
+        { "therapy": "EMDR", "delta_P": -1.5, "delta_B": 0, "delta_T": -2, "mechanism": "Reprocess trauma memory" }
+      ]
+    }
+  },
   "ontologies": [
     {
       "name": "Triadic Computational Psychiatry",
