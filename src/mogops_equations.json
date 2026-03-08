@@ -14,14 +14,54 @@
     "EPSILON": 1e-9
   },
   "operators": [
-    { "symbol": "Ĉ", "name": "Creation Operator", "definition": "Ĉ|ψ⟩ = e^{iθ}|ψ'⟩, θ = π·novelty", "properties": ["non-unitary", "non-linear", "mediates collapse"] },
-    { "symbol": "∇_O", "name": "Entailment Gradient", "definition": "∇_O C = δS/δO", "properties": [] },
-    { "symbol": "Ω_V", "name": "Via Triad", "definition": "Ω_V = M₁⊗M₂⊗M₃", "properties": [] },
-    { "symbol": "Ω_Σ", "name": "Encoding Bridge", "definition": "Ω_Σ = diag(1, e^{iπ/3}, e^{2iπ/3})", "properties": [] },
-    { "symbol": "⊕", "name": "Participatory Weave", "definition": "⊕(O,Q,H,R) = ∫ e^{iS/ħ} 𝒟φ · O[ψ]·H[∂M]·R[t]", "properties": ["non-commutative"] },
-    { "symbol": "ℱ", "name": "Hyperdimensional Folding", "definition": "ℱ: ℝ^{3+1} → ℝ^D (D >> 4)", "properties": ["preserves biological continuity"] },
-    { "symbol": "Î_m", "name": "Information-Mass Operator", "definition": "Î_m|information⟩ = m|information⟩, m = (k_B T ln 2)/c²", "properties": [] },
-    { "symbol": "Ĝ_ent", "name": "Entropic Gravity Operator", "definition": "Ĝ_ent = f(S, ∇S)", "properties": [] }
+    {
+      "symbol": "Ĉ",
+      "name": "Creation Operator",
+      "definition": "Ĉ|ψ⟩ = e^{iθ}|ψ'⟩, θ = π·novelty",
+      "properties": ["non-unitary", "non-linear", "mediates collapse"]
+    },
+    {
+      "symbol": "∇_O",
+      "name": "Entailment Gradient",
+      "definition": "∇_O C = δS/δO",
+      "properties": []
+    },
+    {
+      "symbol": "Ω_V",
+      "name": "Via Triad",
+      "definition": "Ω_V = M₁⊗M₂⊗M₃",
+      "properties": []
+    },
+    {
+      "symbol": "Ω_Σ",
+      "name": "Encoding Bridge",
+      "definition": "Ω_Σ = diag(1, e^{iπ/3}, e^{2iπ/3})",
+      "properties": []
+    },
+    {
+      "symbol": "⊕",
+      "name": "Participatory Weave",
+      "definition": "⊕(O,Q,H,R) = ∫ e^{iS/ħ} 𝒟φ · O[ψ]·H[∂M]·R[t]",
+      "properties": ["non-commutative"]
+    },
+    {
+      "symbol": "ℱ",
+      "name": "Hyperdimensional Folding",
+      "definition": "ℱ: ℝ^{3+1} → ℝ^D (D >> 4)",
+      "properties": ["preserves biological continuity"]
+    },
+    {
+      "symbol": "Î_m",
+      "name": "Information-Mass Operator",
+      "definition": "Î_m|information⟩ = m|information⟩, m = (k_B T ln 2)/c²",
+      "properties": []
+    },
+    {
+      "symbol": "Ĝ_ent",
+      "name": "Entropic Gravity Operator",
+      "definition": "Ĝ_ent = f(S, ∇S)",
+      "properties": []
+    }
   ],
   "ontologies": [
     {
@@ -53,9 +93,15 @@
         { "name": "Epistemic Second Law", "latex": "dS_{\\text{epistemic}} \\geq \\frac{\\delta Q_{\\text{belief}}}{T_{\\text{cognitive}}}" }
       ],
       "mechanisms": [
-        "Cognitive Entropy Pumps", "Belief Phase Transitions", "Insight as Critical Point",
-        "Epistemic Spacetime Curvature", "Information-Mass Equivalence", "Understanding as Crystallization",
-        "Knowledge Pressure Differentials", "Epistemic Temperature Gradients", "Consciousness-Mediated Coherence",
+        "Cognitive Entropy Pumps",
+        "Belief Phase Transitions",
+        "Insight as Critical Point",
+        "Epistemic Spacetime Curvature",
+        "Information-Mass Equivalence",
+        "Understanding as Crystallization",
+        "Knowledge Pressure Differentials",
+        "Epistemic Temperature Gradients",
+        "Consciousness-Mediated Coherence",
         "Insights Curvature Coupling"
       ]
     },
@@ -124,7 +170,12 @@
       "β": 0.33,
       "γ": 1.24
     },
-    "phase_transition_operator": "Φ_SOPHIA = exp(2πi × |C - 0.618|), eigenvalues = {1, e^{±2πi/3}}"
+    "phase_transition_operator": {
+      "name": "Φ_SOPHIA",
+      "definition": "exp(2πi × |C - 0.618|)",
+      "eigenvalues": [1, "e^{2πi/3}", "e^{-2πi/3}"],
+      "symmetry_group": "Z₃"
+    }
   },
   "algorithms": [
     { "name": "MOGOPS Production Algorithm", "pseudocode": "while True:\n    op = select_operator([\"Ĉ\", \"∇ₒ\", \"Ωᵥ\", \"Ω_Σ\"])\n    mechs = sample_mechanisms(3, weights=[P, 1-|P-0.5|, 1-P])\n    form = encode_mathematically(paradox_type)\n    consequence = matrix_multiply(mechs, form, seed.T)\n    if (coherence > 0.6 and novelty > 0.9) or (P_i > 1.5 and elegance > 85):\n        yield Ontology(seed, mechs, form, consequence, metrics)" },
