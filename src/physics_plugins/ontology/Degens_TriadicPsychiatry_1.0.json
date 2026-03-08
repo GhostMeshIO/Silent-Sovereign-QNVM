@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "name": "Degens Triadic Psychiatry",
+    "version": "1.0",
+    "description": "Unified Theory of Degens v0.3 – Triadic Computational Psychiatry mapping all neuropsychiatric disorders to a 3D space of Precision (𝒫), Boundary (ℬ), and Temporal (𝒯) axes. Includes disorder atlas, treatment vectors, and comorbidity geometry.",
+    "group": "Degens Triadic Psychiatry",
+    "authors": ["GhostMeshIO Synthesis"],
+    "date": "2026-03-08"
+  },
+  "params": {
+    "P_MIN": -3.0,
+    "P_MAX": 3.0,
+    "B_MIN": -3.0,
+    "B_MAX": 3.0,
+    "T_MIN": -3.0,
+    "T_MAX": 3.0,
+    "P_HEALTHY": 0.0,
+    "B_HEALTHY": 0.0,
+    "T_HEALTHY": 0.0,
+    "COMORBIDITY_SIGMA": 1.5
+  },
+  "operators": [
+    {
+      "symbol": "𝒫̂",
+      "name": "Precision Operator",
+      "definition": "Modulates Bayesian precision – how strongly the brain weights incoming information.",
+      "properties": []
+    },
+    {
+      "symbol": "ℬ̂",
+      "name": "Boundary Operator",
+      "definition": "Modulates Markov blanket permeability – clarity of self-world demarcation.",
+      "properties": []
+    },
+    {
+      "symbol": "𝒯̂",
+      "name": "Temporal Operator",
+      "definition": "Modulates discounting horizon – orientation in past/present/future.",
+      "properties": []
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Bayesian precision weighting",
+      "function": "lambda state: state.get('precision', 0.5)"
+    },
+    {
+      "name": "Markov blanket boundaries",
+      "function": "lambda state: state.get('boundary', 0.5)"
+    },
+    {
+      "name": "Hyperbolic temporal discounting",
+      "function": "lambda state: state.get('temporal_gamma', 0.9)"
+    },
+    {
+      "name": "Prediction error processing",
+      "function": "lambda state: state.get('prediction_error', 0.1)"
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Triadic Computational Psychiatry",
+      "coordinates": [0.5, 0.5, 0.5, 0.5, 0.5],
+      "axioms": [
+        "Ψ_mind(t) = F(π_precision, ∂B_boundary, γ_temporal) + ξ_plasticity",
+        "Disorder severity = √(𝒫² + ℬ² + 𝒯²)",
+        "Healthy state = (0, 0, 0) – balanced precision, clear yet permeable boundaries, integrated temporal horizon",
+        "Precision axis 𝒫: how strongly brain weights incoming information (Bayesian precision). Range [-3, +3]",
+        "Boundary axis ℬ: clarity of self-world demarcation (Markov blanket). Range [-3, +3]",
+        "Temporal axis 𝒯: orientation in time (past/present/future discounting). Range [-3, +3]"
+      ],
+      "equations": [
+        {
+          "name": "Master Equation",
+          "latex": "\\Psi_{\\text{mind}}(t) = \\mathcal{F}(\\pi_{\\text{precision}}, \\partial B_{\\text{boundary}}, \\gamma_{\\text{temporal}}) + \\xi_{\\text{plasticity}}"
+        },
+        {
+          "name": "Precision Dynamics",
+          "latex": "\\frac{d\\pi}{dt} = -\\kappa(\\pi - \\pi_0) + \\beta \\cdot \\delta^2 + \\gamma \\cdot [DA/NE/5HT] + \\sigma \\xi(t)"
+        },
+        {
+          "name": "Boundary Dynamics",
+          "latex": "\\frac{d(\\partial B)}{dt} = -\\alpha(\\partial B - \\partial B_0) + \\beta \\cdot \\text{stress}(t) + \\gamma \\cdot \\text{attachment}_{\\text{early}} + \\sigma \\xi(t)"
+        },
+        {
+          "name": "Temporal Dynamics",
+          "latex": "\\frac{d\\gamma}{dt} = -\\kappa(\\gamma - \\gamma_0) + \\beta_{\\text{stress}} \\cdot S(t) + \\eta_{\\text{trauma}} \\cdot T(t) + \\alpha_{\\text{reward}} \\cdot R(t)"
+        },
+        {
+          "name": "Comorbidity Distance",
+          "latex": "d(A,B) = \\sqrt{(\\mathcal{P}_A-\\mathcal{P}_B)^2 + (\\mathcal{B}_A-\\mathcal{B}_B)^2 + (\\mathcal{T}_A-\\mathcal{T}_B)^2}"
+        },
+        {
+          "name": "Comorbidity Probability",
+          "latex": "P(A \\cap B) = P(A) \\cdot P(B) \\cdot e^{-d(A,B)/\\sigma}, \\quad \\sigma \\approx 1.5"
+        }
+      ],
+      "mechanisms": [
+        "Bayesian precision weighting",
+        "Markov blanket boundaries",
+        "Hyperbolic temporal discounting",
+        "Prediction error processing"
+      ],
+      "implications": [
+        "All mental disorders are coordinates in 𝒟³-space.",
+        "Treatment = vector recalibration toward origin (0,0,0).",
+        "Comorbidity follows geometric rules: P(comorbid) ∝ e^{-d(A,B)/σ}.",
+        "Axis setpoints vary by culture and early experience.",
+        "Mental health is dynamic stability within healthy ranges, not fixed point.",
+        "Hysteresis effect: path into attractor ≠ path out – explains treatment resistance.",
+        "Developmental sequence: ℬ (0-7 yrs) → 𝒫 (12-25 yrs) → 𝒯 (25+ yrs).",
+        "Fractal self-similarity: 𝒫-ℬ-𝒯 structure repeats at molecular to narrative scales."
+      ]
+    }
+  ],
+  "custom_data": {
+    "disorder_atlas": [
+      { "disorder": "Schizophrenia", "P": 2.0, "B": -2.0, "T": 0.0, "description": "High precision (noise becomes signal) + boundary dissolution" },
+      { "disorder": "PTSD", "P": 1.5, "B": 1.0, "T": -2.5, "description": "Trauma hyperprecision + rigid boundary + past-locked" },
+      { "disorder": "OCD", "P": 1.5, "B": 1.0, "T": 2.0, "description": "Doubt hyperprecision + contamination boundary + future-locked" },
+      { "disorder": "Autism", "P": 1.0, "B": 2.0, "T": 0.0, "description": "Local hyperprecision, rigid social boundary" },
+      { "disorder": "ADHD", "P": -2.0, "B": 0.0, "T": 0.0, "description": "Low precision + present-locked" },
+      { "disorder": "Depression", "P": -2.0, "B": 0.0, "T": -1.5, "description": "Low reward precision + rumination" },
+      { "disorder": "BPD", "P": 0.0, "B": -2.0, "T": 0.0, "description": "Chaotic precision + porous boundary + present-locked" },
+      { "disorder": "Mania", "P": 2.0, "B": -1.0, "T": 3.0, "description": "Grandiose precision + porous + future-expanded" },
+      { "disorder": "Psychopathy", "P": 0.0, "B": 2.5, "T": 1.0, "description": "Neutral precision + rigid exploitative boundary" },
+      { "disorder": "GAD", "P": 1.0, "B": 0.0, "T": 2.0, "description": "Future-focused worry" },
+      { "disorder": "Panic", "P": 2.0, "B": -1.0, "T": 2.0, "description": "Interoceptive hyperprecision + future threat" },
+      { "disorder": "Dissociation", "P": -3.0, "B": -3.0, "T": 0.0, "description": "Self-precision + boundary collapse" },
+      { "disorder": "Bipolar Depression", "P": -2.0, "B": 1.0, "T": -1.5, "description": "Opposite of mania state" },
+      { "disorder": "Schizoaffective", "P": 2.0, "B": -1.5, "T": 1.5, "description": "Hybrid schizophrenia-bipolar" }
+    ],
+    "treatment_vectors": {
+      "pharmacological": [
+        { "class": "Antipsychotics", "delta_P": -2.5, "delta_B": 0.0, "delta_T": 0.0, "mechanism": "D2 antagonism → reduce precision" },
+        { "class": "Stimulants", "delta_P": 1.5, "delta_B": 0.0, "delta_T": -0.5, "mechanism": "DA/NE boost → increase precision + extend horizon" },
+        { "class": "SSRIs", "delta_P": 0.5, "delta_B": 0.5, "delta_T": 0.5, "mechanism": "5-HT reuptake → stabilize all axes" },
+        { "class": "Mood Stabilizers", "delta_P": -1.0, "delta_B": 0.5, "delta_T": 0.0, "mechanism": "Ion channel modulation → reduce oscillations" },
+        { "class": "Benzodiazepines", "delta_P": -1.5, "delta_B": 0.0, "delta_T": -1.0, "mechanism": "GABA agonism → dampen precision + reduce future focus" },
+        { "class": "Psychedelics", "delta_P": 2.0, "delta_B": -2.0, "delta_T": 0.0, "mechanism": "5-HT2A agonism → reset precision + boundary fluidity" }
+      ],
+      "psychotherapy": [
+        { "therapy": "CBT", "delta_P": 1.0, "delta_B": 0.0, "delta_T": 1.0, "mechanism": "Recalibrate priors + future problem-solving" },
+        { "therapy": "DBT", "delta_P": 1.0, "delta_B": 2.0, "delta_T": 0.0, "mechanism": "Mindfulness (precision) + interpersonal effectiveness (boundaries)" },
+        { "therapy": "EMDR", "delta_P": -1.5, "delta_B": 0.0, "delta_T": -2.0, "mechanism": "Reprocess trauma memory" },
+        { "therapy": "Exposure Therapy", "delta_P": -1.0, "delta_B": 0.0, "delta_T": -2.0, "mechanism": "Extinction learning + unstick from past" },
+        { "therapy": "ACT", "delta_P": 0.0, "delta_B": 1.0, "delta_T": 0.0, "mechanism": "Self-as-context + present moment" }
+      ],
+      "neuromodulation": [
+        { "modality": "TMS (DLPFC)", "delta_P": 1.0, "delta_T": 0.5, "target": "Depression" },
+        { "modality": "TMS (SMA)", "delta_P": -1.0, "target": "OCD" },
+        { "modality": "DBS (NAcc)", "delta_P": 2.0, "target": "Treatment-resistant depression" },
+        { "modality": "tDCS (vmPFC)", "delta_B": 1.0, "target": "BPD, dissociation" }
+      ]
+    },
+    "biomarker_predictions": {
+      "precision": "MMN amplitude / RT variance · P300 magnitude",
+      "boundary": "FC(DMN↔external) / FC(DMN internal)",
+      "temporal": "ln(V_delayed) / (ln(V_immediate) · delay)"
+    }
+  }
+}
