@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "name": "Gödelian Paradox Engines",
+    "version": "1.0",
+    "description": "Incompleteness as creative source – Gödelian undecidability drives thermodynamic cycles, fractal incompleteness, and the emergence of meaning. Paradox is the engine of reality.",
+    "group": "Gödelian Paradox Engines",
+    "authors": ["GhostMeshIO Synthesis"],
+    "date": "2026-03-08"
+  },
+  "params": {
+    "PHI": 1.618033988749895,
+    "INV_PHI": 0.6180339887498949,
+    "SOPHIA_POINT": 0.618,
+    "Z3_PHASE_FACTORS": [1.0, -0.5, -0.5],
+    "GODEL_ANOMALY_COUPLING": 0.1
+  },
+  "operators": [
+    {
+      "symbol": "Ĝ",
+      "name": "Gödel Operator",
+      "definition": "Generates Gödel sentences at each level: Gₙ ↔ ¬Provₙ(Gₙ)",
+      "properties": ["self-referential", "undecidable"]
+    },
+    {
+      "symbol": "𝒲_ν",
+      "name": "Gödel Anomaly Tensor",
+      "definition": "∂_μ T^{μν}_ℓ = 𝒲^ν_{Gödel}(ℓ)",
+      "properties": ["non-conserved", "anomalous"]
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Gödelian recursion",
+      "function": "lambda state: state.get('G_n', 0) * 1.618"
+    },
+    {
+      "name": "Undecidability as thermodynamic engine",
+      "function": "lambda state: math.exp(-abs(state.get('paradox', 0))) * 0.1"
+    },
+    {
+      "name": "Paradox intensity",
+      "function": "lambda state: abs(state.get('true', 0) - state.get('false', 0)) / (math.sqrt(state.get('true',0)**2 + state.get('false',0)**2) + 1e-9)"
+    },
+    {
+      "name": "Scale‑dependent Gödel anomaly",
+      "function": "lambda state: state.get('anomaly', 0) * (1 + math.sin(state.get('scale', 1)))"
+    }
+  ],
+  "ontologies": [
+    {
+      "name": "Gödelian Thermodynamic Engine",
+      "coordinates": [0.754, 0.623, 0.891, 0.432, 0.765],
+      "axioms": [
+        "Each fractal level has its own Gödel sentence.",
+        "Incompleteness at each level acts as a thermodynamic engine, pumping entropy upward.",
+        "The undecidability of G_ℓ drives a cycle that produces heat.",
+        "Fractality ensures perpetual motion."
+      ],
+      "equations": [
+        {
+          "name": "Gödel sentence at level ℓ",
+          "latex": "G_\\ell \\leftrightarrow \\neg \\text{Prov}_\\ell(\\ulcorner G_\\ell \\urcorner)"
+        },
+        {
+          "name": "Scale‑dependent anomaly",
+          "latex": "\\partial_\\mu T^{\\mu\\nu}_\\ell = \\mathcal{W}^\\nu_{\\text{Gödel}}(\\ell)"
+        },
+        {
+          "name": "Entropy production from incompleteness",
+          "latex": "\\frac{dS_\\ell}{dt} \\geq \\frac{1}{4G_\\ell} \\frac{dA_\\ell}{dt}"
+        },
+        {
+          "name": "Cycle efficiency",
+          "latex": "\\eta_\\ell = 1 - \\frac{T_\\ell}{T_{\\ell+1}}"
+        },
+        {
+          "name": "Z₃ phase factor",
+          "latex": "\\mathcal{W}_{\\text{Gödel}} \\sim e^{2\\pi i m/3}, \\quad m \\in \\{0,1,2\\}"
+        }
+      ],
+      "mechanisms": [
+        "Gödelian recursion",
+        "Undecidability as thermodynamic engine",
+        "Paradox intensity",
+        "Scale‑dependent Gödel anomaly"
+      ],
+      "implications": [
+        "The universe heats itself by being incomplete.",
+        "Paradox is not an error but a creative engine.",
+        "Truth is stratified: what is undecidable at one level becomes decidable at the next, at the cost of new undecidability.",
+        "Gödelian anomalies are sources of curvature in semantic spacetime.",
+        "The three phases (Z₃) correspond to three possible resolutions of self‑reference."
+      ]
+    },
+    {
+      "name": "Fractal-Gödelian Semantic Framework",
+      "coordinates": [0.823, 0.541, 0.732, 0.614, 0.378],
+      "axioms": [
+        "Meaning at each fractal level is defined by its Gödel sentence.",
+        "The hierarchy of meanings is a fractal of undecidability.",
+        "A meaning M_ℓ is true at level ℓ iff M_ℓ is provable at level ℓ+1.",
+        "Truth relativization creates infinite regress."
+      ],
+      "equations": [
+        {
+          "name": "Meaning recursion",
+          "latex": "M_{\\ell+1} = \\text{meaning of } G_\\ell"
+        },
+        {
+          "name": "Truth relativization",
+          "latex": "\\text{True}_\\ell(M_{\\ell+1}) \\; \\text{is undecidable at level } \\ell"
+        },
+        {
+          "name": "Gödel anomaly in path integral",
+          "latex": "\\langle \\text{word} | \\text{reality} \\rangle = \\int \\mathcal{D}[\\text{meaning}] e^{iS} \\mathcal{W}_{\\text{Gödel}}[\\partial\\mathcal{M}]"
+        }
+      ],
+      "mechanisms": [
+        "Gödelian recursion",
+        "Paradox intensity"
+      ],
+      "implications": [
+        "Meaning is infinitely deep; every understanding rests on an ungrounded foundation.",
+        "The semantic path integral is weighted by Gödelian boundary terms.",
+        "The three Z₃ phases correspond to three classes of meaning (consistent, paradoxical, transcendent)."
+      ]
+    }
+  ],
+  "custom_data": {
+    "z3_phases": {
+      "0": "Consistent (no self-reference)",
+      "1": "Paradoxical (Gödelian loop)",
+      "2": "Transcendent (higher‑order resolution)"
+    },
+    "paradox_intensity_range": "0.0–3.0 (measured across axioms)"
+  }
+}
